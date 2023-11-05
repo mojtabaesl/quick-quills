@@ -1,12 +1,6 @@
 {
   "version": "0.2",
   "language": "en",
-  "ignorePaths": [
-    "node_modules/**",
-    "./.gitignore",
-    "./.prettierignore",
-    ".prettierrc.json",
-    "./prisma/migrations"
-  ],
+  "ignorePaths": ["node_modules/**", "./.gitignore", ".prettierrc.json"],
   "words": ["estateguru"]
 }
