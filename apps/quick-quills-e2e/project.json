@@ -1,0 +1,29 @@
+{
+  "name": "quick-quills-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/quick-quills-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/quick-quills-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "quick-quills:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "quick-quills:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/quick-quills-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["quick-quills"]
+}
