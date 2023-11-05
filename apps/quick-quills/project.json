@@ -62,6 +62,14 @@
       "options": {
         "lintFilePatterns": ["apps/quick-quills/**/*.{ts,tsx,js,jsx}"]
       }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["tsc -p tsconfig.json --noEmit"],
+        "cwd": "apps/quick-quills",
+        "forwardAllArgs": false
+      }
     }
   },
   "tags": []
