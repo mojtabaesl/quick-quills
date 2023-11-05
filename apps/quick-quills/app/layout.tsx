@@ -1,5 +1,6 @@
-import './global.css';
+import '@radix-ui/themes/styles.css';
 import { StyledComponentsRegistry } from './registry';
+import { Theme } from '@radix-ui/themes';
 
 export const metadata = {
   title: 'Welcome to demo2',
@@ -14,7 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        <StyledComponentsRegistry>
+          <Theme>{children}</Theme>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
