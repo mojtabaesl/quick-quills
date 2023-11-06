@@ -1,10 +1,14 @@
-import '@radix-ui/themes/styles.css';
-import { StyledComponentsRegistry } from './registry';
-import { Theme } from '@radix-ui/themes';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import { Providers } from './Providers';
+import { AppSurface } from '@/ui/components/AppSurface';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-family-inter' });
+import '@/ui/styles/reset.css';
+import '@radix-ui/themes/styles.css';
+import '@/ui/styles/radix-theme-config.css';
+import { SideBar } from './SideBar';
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 export const metadata: Metadata = {
   title: 'Quick Quills',
@@ -19,9 +23,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body>
-        <StyledComponentsRegistry>
-          <Theme>{children}</Theme>
-        </StyledComponentsRegistry>
+        <Providers>
+          <AppSurface>
+            <SideBar />
+            <main>{children}</main>
+          </AppSurface>
+        </Providers>
       </body>
     </html>
   );

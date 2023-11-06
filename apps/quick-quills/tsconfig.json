@@ -11,6 +11,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "incremental": true,
+    "baseUrl": ".",
+    "paths": { "@/*": ["./libs/*"] },
     "plugins": [
       {
         "name": "next"
@@ -25,7 +27,8 @@
     "**/*.jsx",
     "../../apps/quick-quills/.next/types/**/*.ts",
     "../../dist/apps/quick-quills/.next/types/**/*.ts",
-    "next-env.d.ts"
+    "next-env.d.ts",
+    "@types/styled.d.ts"
   ],
   "exclude": [
     "node_modules",

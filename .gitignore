@@ -45,3 +45,6 @@ Thumbs.db
 
 #NX
 error.log
+
+#Type Checking
+/apps/**/tsconfig.tsbuildinfo

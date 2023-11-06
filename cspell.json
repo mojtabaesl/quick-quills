@@ -2,5 +2,5 @@
   "version": "0.2",
   "language": "en",
   "ignorePaths": ["node_modules/**", "./.gitignore", ".prettierrc.json"],
-  "words": ["estateguru", "typecheck"]
+  "words": ["estateguru", "typecheck", "lucide"]
 }
