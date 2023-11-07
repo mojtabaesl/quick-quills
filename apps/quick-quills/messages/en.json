@@ -18,5 +18,12 @@
       "action": "Mark As Purchased",
       "subtitle": "Author"
     }
+  },
+  "inventory": {
+    "quickAccess": {
+      "title": "Recently Added Books",
+      "seeMore": "See Todo List"
+    },
+    "search": "Search for books..."
   }
 }
