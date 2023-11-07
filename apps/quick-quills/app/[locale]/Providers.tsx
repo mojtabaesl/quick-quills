@@ -13,7 +13,7 @@ interface Props {
 export function Providers({ children }: Props): JSX.Element {
   return (
     <StyledComponentsRegistry>
-      <RadixUiTheme appearance="dark">
+      <RadixUiTheme appearance="dark" color="purple">
         <StyledComponentsThemeProvider theme={theme}>
           {children}
         </StyledComponentsThemeProvider>

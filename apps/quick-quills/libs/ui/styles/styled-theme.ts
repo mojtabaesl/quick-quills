@@ -6,6 +6,8 @@ const colorTokens = {
   bg: {
     surface: 'var(--c-bg-surface)',
     active: 'var(--c-bg-active)',
+    secondary: 'var(--c-tint-100)',
+    hover: 'var(--c-tint-50)',
   },
   border: {
     primary: 'var(--c-border-primary)',

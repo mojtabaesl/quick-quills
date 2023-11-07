@@ -1,9 +1,9 @@
 import { NavLink } from '../NavLink';
-import { Flex } from '@radix-ui/themes';
 import { useTranslations } from 'next-intl';
 import { StyledUl } from './StyledUl';
 import type { ReactNode } from 'react';
 import type { Routes } from '@/router/routes';
+import { Stack } from '../Stack';
 
 export interface NavLink {
   to: Routes;
@@ -19,7 +19,7 @@ export const Navigation = ({ links }: NavigationProps) => {
   const t = useTranslations('navigation');
   return (
     <nav>
-      <Flex direction={'column'} gap={'2'} asChild>
+      <Stack gap={'2'} asChild>
         <StyledUl>
           {links.map(({ to, icon, label }) => (
             <NavLink
@@ -30,7 +30,7 @@ export const Navigation = ({ links }: NavigationProps) => {
             />
           ))}
         </StyledUl>
-      </Flex>
+      </Stack>
     </nav>
   );
 };

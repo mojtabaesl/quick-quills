@@ -4,12 +4,19 @@
     "quickAccess": {
       "title": "Recently Purchased Books",
       "seeMore": "See All Purchased Books"
-    }
+    },
+    "search": "Search for books..."
   },
   "navigation": {
     "home": "Home",
     "books": "All Books",
     "inventory": "My Inventory",
     "todo": "Todo List"
+  },
+  "book": {
+    "card": {
+      "action": "Mark As Purchased",
+      "subtitle": "Author"
+    }
   }
 }
