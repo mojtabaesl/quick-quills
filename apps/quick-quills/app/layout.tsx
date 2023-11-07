@@ -2,11 +2,13 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Providers } from './Providers';
 import { AppSurface } from '@/ui/components/AppSurface';
+import { SideBar } from './SideBar';
+import { Main } from './Main';
 
 import '@/ui/styles/reset.css';
 import '@radix-ui/themes/styles.css';
+import '@/ui/styles/tokens.css';
 import '@/ui/styles/radix-theme-config.css';
-import { SideBar } from './SideBar';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
@@ -26,7 +28,7 @@ export default function RootLayout({
         <Providers>
           <AppSurface>
             <SideBar />
-            <main>{children}</main>
+            <Main>{children}</Main>
           </AppSurface>
         </Providers>
       </body>

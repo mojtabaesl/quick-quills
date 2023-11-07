@@ -4,7 +4,7 @@ import { StyledComponentsRegistry } from './Registry';
 import { Theme as RadixUiTheme } from '@radix-ui/themes';
 import type { ReactNode } from 'react';
 import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components';
-import { theme } from '@/ui/styles/theme';
+import { theme } from '@/ui/styles/styled-theme';
 
 interface Props {
   children: ReactNode;
@@ -13,7 +13,7 @@ interface Props {
 export function Providers({ children }: Props): JSX.Element {
   return (
     <StyledComponentsRegistry>
-      <RadixUiTheme>
+      <RadixUiTheme appearance="dark">
         <StyledComponentsThemeProvider theme={theme}>
           {children}
         </StyledComponentsThemeProvider>

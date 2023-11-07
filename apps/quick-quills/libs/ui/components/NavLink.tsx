@@ -36,13 +36,13 @@ export const NavLink = ({ href, icon, label }: Props) => {
   );
 
   return (
-    <StyledLink href={href} isActive={isActive}>
-      <Flex gap={'4'} px={'4'} py={'3'}>
+    <Flex gap={'4'} px={'4'} py={'3'} asChild>
+      <StyledLink href={href} isActive={isActive}>
         {icon}
         <Text size={'3'} weight={'medium'}>
           {label}
         </Text>
-      </Flex>
-    </StyledLink>
+      </StyledLink>
+    </Flex>
   );
 };

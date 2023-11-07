@@ -3,4 +3,5 @@ export {
   Book as BookIcon,
   Home as HomeIcon,
   ListTodo as ListTodoIcon,
+  ExternalLink as ExternalLinkIcon,
 } from 'lucide-react';

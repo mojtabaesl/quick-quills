@@ -1,0 +1,7 @@
+:root {
+  --c-fg-primary: rgb(237, 237, 237);
+  --c-fg-muted: rgb(126, 133, 143);
+  --c-bg-surface: rgb(28, 28, 30);
+  --c-bg-active: rgb(47, 43, 56);
+  --c-border-primary: rgb(54, 54, 54);
+}
