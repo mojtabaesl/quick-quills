@@ -1,12 +1,12 @@
-'use client';
-
-import { NavLink } from './NavLink';
-import type { ReactNode } from 'react';
+import { NavLink } from '../NavLink';
 import { Flex } from '@radix-ui/themes';
-import styled from 'styled-components';
+import { useTranslations } from 'next-intl';
+import { StyledUl } from './StyledUl';
+import type { ReactNode } from 'react';
+import type { Routes } from '@/router/routes';
 
 export interface NavLink {
-  to: string;
+  to: Routes;
   icon: ReactNode;
   label: string;
 }
@@ -15,20 +15,19 @@ export interface NavigationProps {
   links: NavLink[];
 }
 
-const StyledUl = styled.ul`
-  list-style: none;
-  padding: 0;
-`;
-
 export const Navigation = ({ links }: NavigationProps) => {
+  const t = useTranslations('navigation');
   return (
     <nav>
       <Flex direction={'column'} gap={'2'} asChild>
         <StyledUl>
           {links.map(({ to, icon, label }) => (
-            <li key={to + label}>
-              <NavLink href={to} label={label} icon={icon} />
-            </li>
+            <NavLink
+              href={to}
+              label={t(label)}
+              icon={icon}
+              key={to + '-' + label}
+            />
           ))}
         </StyledUl>
       </Flex>

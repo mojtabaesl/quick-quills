@@ -1,0 +1,15 @@
+{
+  "welcome": "Welcome Neville",
+  "todo": {
+    "quickAccess": {
+      "title": "Recently Purchased Books",
+      "seeMore": "See All Purchased Books"
+    }
+  },
+  "navigation": {
+    "home": "Home",
+    "books": "All Books",
+    "inventory": "My Inventory",
+    "todo": "Todo List"
+  }
+}
