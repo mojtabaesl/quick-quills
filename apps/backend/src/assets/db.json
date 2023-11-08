@@ -4,7 +4,7 @@
       "id": 1,
       "title": "The Wizard's Grimoire",
       "author": "Gandalf",
-      "isPurchased": false
+      "isPurchased": true
     },
     {
       "id": 2,

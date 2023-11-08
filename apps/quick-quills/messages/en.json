@@ -15,7 +15,10 @@
   },
   "book": {
     "card": {
-      "action": "Mark As Purchased",
+      "action": {
+        "done": "Mark As Purchased",
+        "return": "Return To Todo List"
+      },
       "subtitle": "Author"
     }
   },
