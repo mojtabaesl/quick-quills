@@ -1,0 +1,64 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "The Wizard's Grimoire",
+      "author": "Gandalf",
+      "isPurchased": false
+    },
+    {
+      "id": 2,
+      "title": "Spells of Enchantment",
+      "author": "Merlin",
+      "isPurchased": false
+    },
+    {
+      "id": 3,
+      "title": "Wizarding Wonders",
+      "author": "Dumbledore",
+      "isPurchased": false
+    },
+    {
+      "id": 4,
+      "title": "Magical Elixirs and Potions",
+      "author": "Morgana",
+      "isPurchased": false
+    },
+    {
+      "id": 5,
+      "title": "Tales of Legendary Wizards",
+      "author": "Hermione",
+      "isPurchased": false
+    },
+    {
+      "id": 6,
+      "title": "The Sorcerer's Handbook",
+      "author": "Gryffindor",
+      "isPurchased": false
+    },
+    {
+      "id": 7,
+      "title": "Chronicles of Mystical Spells",
+      "author": "Saruman",
+      "isPurchased": false
+    },
+    {
+      "id": 8,
+      "title": "Enchanted Wizardry",
+      "author": "Gellert",
+      "isPurchased": false
+    },
+    {
+      "id": 9,
+      "title": "Wizard's Wandlore",
+      "author": "McGonagall",
+      "isPurchased": false
+    },
+    {
+      "id": 10,
+      "title": "Secrets of the Mage",
+      "author": "Ravenclaw",
+      "isPurchased": false
+    }
+  ]
+}
