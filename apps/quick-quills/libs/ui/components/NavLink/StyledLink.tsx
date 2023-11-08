@@ -13,10 +13,10 @@ export const StyledLink = styled(({ isActive, ...rest }) => (
     isActive ? getToken('color.fg.primary') : getToken('color.fg.muted')};
   &:hover {
     background: ${({ isActive }) =>
-      isActive ? null : getToken('color.bg.hover')};
+      isActive ? null : getToken('color.bg.hover.1')};
   }
   border-radius: 5px;
   text-decoration: none;
-  transition-property: color, background-color;
+  transition-property: all;
   transition-duration: 0.25s;
 `;

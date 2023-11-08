@@ -14,6 +14,11 @@ const StyledFlex = styled(Flex)`
   background-color: ${getToken('color.bg.secondary')};
   height: max-content;
   border-radius: 5px;
+  &:hover {
+    background-color: ${getToken('color.bg.hover.2')};
+  }
+  transition-property: all;
+  transition-duration: 0.25s;
 `;
 
 export const Card = ({ children, ...rest }: CardProps) => {

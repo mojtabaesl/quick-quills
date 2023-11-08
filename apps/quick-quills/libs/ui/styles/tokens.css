@@ -3,7 +3,8 @@
   --c-fg-muted: rgb(126, 133, 143);
   --c-bg-surface: rgb(28, 28, 30);
   --c-bg-active: rgb(47, 43, 56);
+  --c-bg-secondary: rgb(39, 39, 41);
   --c-border-primary: rgb(54, 54, 54);
-  --c-tint-100: rgba(255, 255, 255, 0.05);
+  --c-tint-100: rgba(255, 255, 255, 0.1);
   --c-tint-50: rgba(255, 255, 255, 0.03);
 }
