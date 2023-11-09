@@ -59,6 +59,72 @@
       "title": "Secrets of the Mage",
       "author": "Ravenclaw",
       "isPurchased": false
+    },
+    {
+      "id": 11,
+      "title": "Enchanted Wizardry 1",
+      "author": "Gellert",
+      "isPurchased": true
+    },
+    {
+      "id": 12,
+      "title": "Wizard's Wandlore 2",
+      "author": "McGonagall",
+      "isPurchased": true
+    },
+    {
+      "id": 13,
+      "title": "Secrets of the Mage 3",
+      "author": "Ravenclaw",
+      "isPurchased": true
+    },
+    {
+      "id": 14,
+      "title": "Chronicles of Mystical Spells",
+      "author": "Saruman",
+      "isPurchased": false
+    },
+    {
+      "id": 15,
+      "title": "Enchanted Wizardry",
+      "author": "Gellert",
+      "isPurchased": false
+    },
+    {
+      "id": 16,
+      "title": "Wizard's Wandlore",
+      "author": "McGonagall",
+      "isPurchased": false
+    },
+    {
+      "id": 17,
+      "title": "Secrets of the Mage",
+      "author": "Ravenclaw",
+      "isPurchased": false
+    },
+    {
+      "id": 18,
+      "title": "Chronicles of Mystical Spells",
+      "author": "Saruman",
+      "isPurchased": false
+    },
+    {
+      "id": 19,
+      "title": "Enchanted Wizardry",
+      "author": "Gellert",
+      "isPurchased": false
+    },
+    {
+      "id": 20,
+      "title": "Wizard's Wandlore",
+      "author": "McGonagall",
+      "isPurchased": false
+    },
+    {
+      "id": 21,
+      "title": "Secrets of the Mage",
+      "author": "Ravenclaw",
+      "isPurchased": false
     }
   ]
 }

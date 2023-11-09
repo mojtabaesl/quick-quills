@@ -4,7 +4,9 @@ import { SearchBox } from '@/ui/components/SearchBox';
 import { Page } from '@/ui/components/Page';
 import { InventoryList } from './List';
 import { PreFetchBoundary } from '@/data-layer/PreFetchBoundary';
-import { usePurchasedBooksPrefetchQuery } from '@/data-layer/usePurchasedBooks';
+import { usePurchasedBooksPrefetchInfiniteQuery } from '@/data-layer/usePurchasedBooks';
+import { QuickAccessTodoList } from 'app/_shared/QuickAccessList';
+import { useQuickAccessTodoPrefetchQuery } from '@/data-layer/useQuickAccess';
 
 export default function TodoPage() {
   const t = useTranslations('inventory');
@@ -21,7 +23,7 @@ export default function TodoPage() {
       </Page.Header>
       <Page.Main>
         <PreFetchBoundary
-          preFetchedQueryClientFN={usePurchasedBooksPrefetchQuery}
+          preFetchedQueryClientFN={usePurchasedBooksPrefetchInfiniteQuery}
         >
           <InventoryList messages={messages} />
         </PreFetchBoundary>
@@ -32,6 +34,11 @@ export default function TodoPage() {
           seeMoreTitle={t('quickAccess.seeMore')}
           seeMoreLink="/todo"
         />
+        <PreFetchBoundary
+          preFetchedQueryClientFN={useQuickAccessTodoPrefetchQuery}
+        >
+          <QuickAccessTodoList messages={messages} />
+        </PreFetchBoundary>
       </Page.QuickAccess>
     </Page>
   );

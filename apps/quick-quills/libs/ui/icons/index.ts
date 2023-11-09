@@ -7,4 +7,5 @@ export {
   Trash2 as TrashIcon,
   XCircle as XCircleIcon,
   Search as SearchIcon,
+  Loader2 as LoaderIcon,
 } from 'lucide-react';

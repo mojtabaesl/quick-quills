@@ -3,7 +3,8 @@
 import { getToken } from '@/utils';
 import { Flex } from '@radix-ui/themes';
 import type { FlexProps } from '@radix-ui/themes/dist/cjs/components/flex';
-import type { ReactNode } from 'react';
+import type { Ref } from 'react';
+import { forwardRef, type ReactNode } from 'react';
 import styled from 'styled-components';
 
 interface CardProps extends FlexProps {
@@ -21,10 +22,21 @@ const StyledFlex = styled(Flex)`
   transition-duration: 0.25s;
 `;
 
-export const Card = ({ children, ...rest }: CardProps) => {
-  return (
-    <StyledFlex grow={'1'} justify={'between'} py={'2'} px={'5'} {...rest}>
-      {children}
-    </StyledFlex>
-  );
-};
+export const Card = forwardRef(
+  ({ children, ...rest }: CardProps, ref: Ref<HTMLDivElement>) => {
+    return (
+      <StyledFlex
+        grow={'1'}
+        justify={'between'}
+        py={'2'}
+        px={'5'}
+        ref={ref}
+        {...rest}
+      >
+        {children}
+      </StyledFlex>
+    );
+  }
+);
+
+Card.displayName = 'Card';

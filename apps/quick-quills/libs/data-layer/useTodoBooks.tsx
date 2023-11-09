@@ -1,28 +1,36 @@
-import { bookSchema } from '@/schema/book';
-import { QueryClient, useQuery } from '@tanstack/react-query';
+import { QueryClient, useInfiniteQuery } from '@tanstack/react-query';
+import { booksFetcher } from './BooksFetcher';
 
-export const getTodoBooks = async () => {
-  const res = await fetch('http://localhost:3333/api/books?isPurchased=false');
-  if (!res.ok) {
-    throw new Error('Network Error');
-  }
-  return bookSchema.array().parse(await res.json());
-};
-
-const queryKey = ['books', 'todo'];
-
-export const useTodoBooksQuery = () => {
-  return useQuery({
-    queryKey,
-    queryFn: getTodoBooks,
+export const useTodoBooksInfiniteQuery = () => {
+  return useInfiniteQuery({
+    queryKey: ['books', 'todo'],
+    queryFn: ({ pageParam }) =>
+      booksFetcher({
+        params: {
+          isPurchased: 'false',
+          _sort: 'id',
+          _page: pageParam.toString(),
+          _limit: '15',
+        },
+      }),
+    getNextPageParam: (lastPage, allPages) =>
+      lastPage.length === 15 ? allPages.length + 1 : undefined,
+    initialPageParam: 1,
   });
 };
 
-export const useTodoBooksPrefetchQuery = async () => {
+export const useTodoBooksPrefetchInfiniteQuery = async () => {
   const queryClient = new QueryClient();
-  await queryClient.prefetchQuery({
-    queryKey,
-    queryFn: getTodoBooks,
+  await queryClient.prefetchInfiniteQuery({
+    queryKey: ['books', 'todo'],
+    queryFn: () =>
+      booksFetcher({
+        params: {
+          isPurchased: 'false',
+          _limit: '15',
+        },
+      }),
+    initialPageParam: 1,
   });
   return queryClient;
 };

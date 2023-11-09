@@ -3,7 +3,7 @@ import { SearchBox } from '@/ui/components/SearchBox';
 import { Page } from '@/ui/components/Page';
 import { BooksList } from './List';
 import { PreFetchBoundary } from '@/data-layer/PreFetchBoundary';
-import { useAllBooksPrefetchQuery } from '@/data-layer/useAllBooks';
+import { useAllBooksPrefetchInfiniteQuery } from '@/data-layer/useAllBooks';
 
 export default function BooksPage() {
   const t = useTranslations('inventory');
@@ -20,7 +20,9 @@ export default function BooksPage() {
         <SearchBox placeholder={t('search')} />
       </Page.Header>
       <Page.Main>
-        <PreFetchBoundary preFetchedQueryClientFN={useAllBooksPrefetchQuery}>
+        <PreFetchBoundary
+          preFetchedQueryClientFN={useAllBooksPrefetchInfiniteQuery}
+        >
           <BooksList messages={messages} />
         </PreFetchBoundary>
       </Page.Main>

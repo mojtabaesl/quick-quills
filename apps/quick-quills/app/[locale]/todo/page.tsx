@@ -2,12 +2,11 @@ import { QuickAccessTitle } from '@/ui/components/QuickAccessTitle';
 import { useTranslations } from 'next-intl';
 import { SearchBox } from '@/ui/components/SearchBox';
 import { Page } from '@/ui/components/Page';
-import { BookCard } from 'app/_components/BookCard';
-import { Button } from '@/ui/components/Button';
-import { Flex } from '@radix-ui/themes';
-import { PreFetchBoundary } from '@/data-layer/PreFetchBoundary';
 import { TodoList } from './List';
-import { useTodoBooksPrefetchQuery } from '@/data-layer/useTodoBooks';
+import { QuickAccessInventoryList } from 'app/_shared/QuickAccessList';
+import { PreFetchBoundary } from '@/data-layer/PreFetchBoundary';
+import { useTodoBooksPrefetchInfiniteQuery } from '@/data-layer/useTodoBooks';
+import { useQuickAccessPurchasedPrefetchQuery } from '@/data-layer/useQuickAccess';
 
 export default function TodoPage() {
   const t = useTranslations('todo');
@@ -15,6 +14,7 @@ export default function TodoPage() {
   const messages = {
     actions: {
       done: t2('done'),
+      return: t2('return'),
     },
   };
   return (
@@ -23,7 +23,9 @@ export default function TodoPage() {
         <SearchBox placeholder={t('search')} />
       </Page.Header>
       <Page.Main>
-        <PreFetchBoundary preFetchedQueryClientFN={useTodoBooksPrefetchQuery}>
+        <PreFetchBoundary
+          preFetchedQueryClientFN={useTodoBooksPrefetchInfiniteQuery}
+        >
           <TodoList messages={messages} />
         </PreFetchBoundary>
       </Page.Main>
@@ -33,26 +35,11 @@ export default function TodoPage() {
           seeMoreTitle={t('quickAccess.seeMore')}
           seeMoreLink="/inventory"
         />
-        <Flex gap={'3'}>
-          <BookCard>
-            <BookCard.Info title="new book" author="Fateme" />
-            <Button color="gray" variant="soft">
-              Return To TodoList
-            </Button>
-          </BookCard>
-          <BookCard>
-            <BookCard.Info title="new book" author="Fateme" />
-            <Button color="gray" variant="soft">
-              Return To TodoList
-            </Button>
-          </BookCard>
-          <BookCard>
-            <BookCard.Info title="new book" author="Fateme" />
-            <Button color="gray" variant="soft">
-              Return To TodoList
-            </Button>
-          </BookCard>
-        </Flex>
+        <PreFetchBoundary
+          preFetchedQueryClientFN={useQuickAccessPurchasedPrefetchQuery}
+        >
+          <QuickAccessInventoryList messages={messages} />
+        </PreFetchBoundary>
       </Page.QuickAccess>
     </Page>
   );
