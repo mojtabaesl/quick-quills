@@ -2,7 +2,7 @@ import { PageLink } from '@/router/PageLink';
 import { getToken } from '@/utils';
 import styled from 'styled-components';
 
-export const StyledLink = styled(({ isActive, ...rest }) => (
+export const StyledPageLink = styled(({ isActive, ...rest }) => (
   <PageLink {...rest} />
 ))<{
   isActive: boolean;

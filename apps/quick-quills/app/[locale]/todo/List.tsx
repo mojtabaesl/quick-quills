@@ -10,6 +10,7 @@ import { Loading } from '@/ui/components/Loading';
 import { useTodoBooksInfiniteQuery } from '@/data-layer/useTodoBooks';
 import { DeleteBookDialog } from 'app/_shared/DeleteBook';
 import { useBookMutation } from '@/data-layer/useUpdateBook';
+import { EmptyState } from '@/ui/components/EmptyState';
 
 interface T {
   actions: Record<'done', string>;
@@ -35,6 +36,7 @@ export const TodoList = ({ messages: t }: TodoListProps) => {
 
   if (isError) return <>Error ...</>;
   if (isLoading) return <>Loading ...</>;
+  if (data?.pages.flat().length === 0) return <EmptyState />;
 
   return (
     <Stack px={'9'} gap={'4'} grow={'1'} asChild>

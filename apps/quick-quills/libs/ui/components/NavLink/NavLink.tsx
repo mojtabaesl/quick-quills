@@ -4,7 +4,7 @@ import { useSelectedLayoutSegment } from 'next/navigation';
 import { useMemo } from 'react';
 import { comparePaths } from '../../../utils/path';
 import { Flex, Text } from '@radix-ui/themes';
-import { StyledLink } from './StyledLink';
+import { StyledPageLink } from './StyledPageLink';
 import type { Routes } from '@/router/routes';
 
 interface Props {
@@ -24,12 +24,12 @@ export const NavLink = ({ href, icon, label }: Props) => {
   return (
     <li {...(isActive ? { 'aria-current': 'page' } : {})}>
       <Flex gap={'4'} px={'4'} py={'3'} asChild>
-        <StyledLink href={href} isActive={isActive}>
+        <StyledPageLink href={href} isActive={isActive}>
           {icon}
           <Text size={'3'} weight={'medium'}>
             {label}
           </Text>
-        </StyledLink>
+        </StyledPageLink>
       </Flex>
     </li>
   );

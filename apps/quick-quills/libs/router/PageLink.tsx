@@ -1,8 +1,7 @@
-import type { LinkProps } from 'next/link';
-import NextLink from 'next/link';
+import NextLink from 'next-intl/link';
 import type { Routes } from './routes';
 
-interface PageLinkProps extends LinkProps {
+interface PageLinkProps {
   href: Routes;
   children?: React.ReactNode;
 }
