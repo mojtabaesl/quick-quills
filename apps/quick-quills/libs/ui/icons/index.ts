@@ -8,4 +8,5 @@ export {
   XCircle as XCircleIcon,
   Search as SearchIcon,
   Loader2 as LoaderIcon,
+  Info as InfoIcon,
 } from 'lucide-react';

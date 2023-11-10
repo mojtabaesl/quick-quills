@@ -2,12 +2,11 @@
 
 import { usePurchasedBooksInfiniteQuery } from '@/data-layer/usePurchasedBooks';
 import { Button } from '@/ui/components/Button';
-import { IconButton } from '@/ui/components/IconButton';
 import { Loading } from '@/ui/components/Loading';
 import { Stack } from '@/ui/components/Stack';
-import { TrashIcon } from '@/ui/icons';
 import { Flex } from '@radix-ui/themes';
 import { BookCard } from 'app/_shared/BookCard';
+import { DeleteBookDialog } from 'app/_shared/DeleteBook';
 import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 
@@ -38,13 +37,16 @@ export const InventoryList = ({ messages: t }: InventoryListProps) => {
     <Stack px={'9'} gap={'4'} grow={'1'} asChild>
       <section>
         {data?.pages.map((page) =>
-          page?.map(({ title, id, author }, i) => (
+          page?.map(({ title, id, author, isPurchased }, i) => (
             <BookCard key={id} ref={page.length === i + 1 ? ref : undefined}>
               <BookCard.Info title={title} author={author} />
               <Flex gap={'6'} align={'center'}>
-                <IconButton variant="ghost" color="red">
-                  <TrashIcon />
-                </IconButton>
+                <DeleteBookDialog
+                  id={id}
+                  author={author}
+                  title={title}
+                  isPurchased={isPurchased}
+                />
                 <Button color="purple">{t.actions.return}</Button>
               </Flex>
             </BookCard>

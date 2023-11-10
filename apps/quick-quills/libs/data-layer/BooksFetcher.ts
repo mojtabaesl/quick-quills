@@ -20,3 +20,12 @@ export const booksFetcher = async ({ params }: BooksFetcherProps = {}) => {
   }
   return bookSchema.array().parse(await res.json());
 };
+
+export const deleteBook = async ({ id }: { id: string }) => {
+  const url = `http://localhost:3333/api/books/${id}`;
+  const res = await fetch(url, { method: 'DELETE' });
+  if (!res.ok) {
+    throw new Error('Network Error');
+  }
+  return await res.json();
+};
