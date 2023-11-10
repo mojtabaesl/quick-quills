@@ -5,6 +5,7 @@ export const bookSchema = z.object({
   title: z.string(),
   author: z.string(),
   isPurchased: z.boolean(),
+  purchasedDate: z.string().nullable(),
 });
 
 export type Book = z.infer<typeof bookSchema>;

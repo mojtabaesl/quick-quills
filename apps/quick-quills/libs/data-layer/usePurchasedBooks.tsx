@@ -1,6 +1,6 @@
 import type { Pagination } from './BooksFetcher';
 import { QueryClient, useInfiniteQuery } from '@tanstack/react-query';
-import { booksFetcher } from './BooksFetcher';
+import { getBooks } from './BooksFetcher';
 
 export interface HookParams {
   params?: Pagination;
@@ -10,10 +10,11 @@ export const usePurchasedBooksInfiniteQuery = () => {
   return useInfiniteQuery({
     queryKey: ['books', 'purchased'],
     queryFn: ({ pageParam }) =>
-      booksFetcher({
+      getBooks({
         params: {
           isPurchased: 'true',
-          _sort: 'id',
+          _sort: 'purchasedDate',
+          _order: 'desc',
           _page: pageParam.toString(),
           _limit: '15',
         },
@@ -29,9 +30,11 @@ export const usePurchasedBooksPrefetchInfiniteQuery = async () => {
   await queryClient.prefetchInfiniteQuery({
     queryKey: ['books', 'purchased'],
     queryFn: () =>
-      booksFetcher({
+      getBooks({
         params: {
           isPurchased: 'true',
+          _sort: 'purchasedDate',
+          _order: 'desc',
           _limit: '15',
         },
       }),

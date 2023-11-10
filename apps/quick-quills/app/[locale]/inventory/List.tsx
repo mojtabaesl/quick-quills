@@ -1,6 +1,7 @@
 'use client';
 
 import { usePurchasedBooksInfiniteQuery } from '@/data-layer/usePurchasedBooks';
+import { useBookMutation } from '@/data-layer/useUpdateBook';
 import { Button } from '@/ui/components/Button';
 import { Loading } from '@/ui/components/Loading';
 import { Stack } from '@/ui/components/Stack';
@@ -20,6 +21,8 @@ interface InventoryListProps {
 
 export const InventoryList = ({ messages: t }: InventoryListProps) => {
   const { ref, inView } = useInView();
+  const { isPending, isSuccess, mutate } = useBookMutation();
+  console.log({ isPending, isSuccess });
 
   const { data, isError, isLoading, fetchNextPage, hasNextPage, isFetching } =
     usePurchasedBooksInfiniteQuery();
@@ -47,7 +50,20 @@ export const InventoryList = ({ messages: t }: InventoryListProps) => {
                   title={title}
                   isPurchased={isPurchased}
                 />
-                <Button color="purple">{t.actions.return}</Button>
+                <Button
+                  color="purple"
+                  onClick={() =>
+                    mutate({
+                      id: id.toString(),
+                      body: {
+                        isPurchased: false,
+                        purchasedDate: null,
+                      },
+                    })
+                  }
+                >
+                  {t.actions.return}
+                </Button>
               </Flex>
             </BookCard>
           ))

@@ -4,127 +4,148 @@
       "id": 1,
       "title": "The Wizard's Grimoire",
       "author": "Gandalf",
-      "isPurchased": true
+      "isPurchased": true,
+      "purchasedDate": "2023-11-03T10:30:00Z"
     },
     {
       "id": 2,
       "title": "Spells of Enchantment",
       "author": "Merlin",
-      "isPurchased": false
+      "isPurchased": false,
+      "purchasedDate": null
     },
     {
       "id": 3,
       "title": "Wizarding Wonders",
       "author": "Dumbledore",
-      "isPurchased": false
+      "isPurchased": false,
+      "purchasedDate": null
     },
     {
       "id": 4,
       "title": "Magical Elixirs and Potions",
       "author": "Morgana",
-      "isPurchased": false
+      "isPurchased": false,
+      "purchasedDate": null
     },
     {
       "id": 5,
       "title": "Tales of Legendary Wizards",
       "author": "Hermione",
-      "isPurchased": false
+      "isPurchased": false,
+      "purchasedDate": null
     },
     {
       "id": 6,
       "title": "The Sorcerer's Handbook",
       "author": "Gryffindor",
-      "isPurchased": false
+      "isPurchased": false,
+      "purchasedDate": null
     },
     {
       "id": 7,
       "title": "Chronicles of Mystical Spells",
       "author": "Saruman",
-      "isPurchased": false
+      "isPurchased": false,
+      "purchasedDate": null
     },
     {
       "id": 8,
       "title": "Enchanted Wizardry",
       "author": "Gellert",
-      "isPurchased": false
+      "isPurchased": false,
+      "purchasedDate": null
     },
     {
       "id": 9,
       "title": "Wizard's Wandlore",
       "author": "McGonagall",
-      "isPurchased": false
+      "isPurchased": false,
+      "purchasedDate": null
     },
     {
       "id": 10,
       "title": "Secrets of the Mage",
       "author": "Ravenclaw",
-      "isPurchased": false
+      "isPurchased": false,
+      "purchasedDate": null
     },
     {
       "id": 11,
       "title": "Enchanted Wizardry 1",
       "author": "Gellert",
-      "isPurchased": true
+      "isPurchased": true,
+      "purchasedDate": "2023-11-05T10:30:00Z"
     },
     {
       "id": 12,
       "title": "Wizard's Wandlore 2",
       "author": "McGonagall",
-      "isPurchased": true
+      "isPurchased": true,
+      "purchasedDate": "2023-11-04T10:30:00Z"
     },
     {
       "id": 13,
       "title": "Secrets of the Mage 3",
       "author": "Ravenclaw",
-      "isPurchased": true
+      "isPurchased": true,
+      "purchasedDate": "2023-11-06T10:30:00Z"
     },
     {
       "id": 14,
       "title": "Chronicles of Mystical Spells",
       "author": "Saruman",
-      "isPurchased": false
+      "isPurchased": false,
+      "purchasedDate": null
     },
     {
       "id": 15,
       "title": "Enchanted Wizardry",
       "author": "Gellert",
-      "isPurchased": false
+      "isPurchased": false,
+      "purchasedDate": null
     },
     {
       "id": 16,
       "title": "Wizard's Wandlore",
       "author": "McGonagall",
-      "isPurchased": false
+      "isPurchased": false,
+      "purchasedDate": null
     },
     {
       "id": 17,
       "title": "Secrets of the Mage",
       "author": "Ravenclaw",
-      "isPurchased": false
+      "isPurchased": false,
+      "purchasedDate": null
     },
     {
       "id": 18,
       "title": "Chronicles of Mystical Spells",
       "author": "Saruman",
-      "isPurchased": false
+      "isPurchased": false,
+      "purchasedDate": null
     },
     {
       "id": 19,
       "title": "Enchanted Wizardry",
       "author": "Gellert",
-      "isPurchased": false
+      "isPurchased": false,
+      "purchasedDate": null
     },
     {
       "id": 20,
       "title": "Wizard's Wandlore",
       "author": "McGonagall",
-      "isPurchased": false
+      "isPurchased": false,
+      "purchasedDate": null
     },
     {
       "id": 21,
       "title": "Secrets of the Mage",
       "author": "Ravenclaw",
-      "isPurchased": false
+      "isPurchased": false,
+      "purchasedDate": null
     }
   ]
 }

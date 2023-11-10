@@ -1,11 +1,11 @@
 import { QueryClient, useInfiniteQuery } from '@tanstack/react-query';
-import { booksFetcher } from './BooksFetcher';
+import { getBooks } from './BooksFetcher';
 
 export const useAllBooksInfiniteQuery = () => {
   return useInfiniteQuery({
     queryKey: ['books'],
     queryFn: ({ pageParam }) =>
-      booksFetcher({
+      getBooks({
         params: {
           _page: pageParam.toString(),
           _limit: '15',
@@ -22,7 +22,7 @@ export const useAllBooksPrefetchInfiniteQuery = async () => {
   await queryClient.prefetchInfiniteQuery({
     queryKey: ['books'],
     queryFn: () =>
-      booksFetcher({
+      getBooks({
         params: {
           _limit: '15',
         },

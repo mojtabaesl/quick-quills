@@ -9,6 +9,7 @@ import { useEffect } from 'react';
 import { Loading } from '@/ui/components/Loading';
 import { useTodoBooksInfiniteQuery } from '@/data-layer/useTodoBooks';
 import { DeleteBookDialog } from 'app/_shared/DeleteBook';
+import { useBookMutation } from '@/data-layer/useUpdateBook';
 
 interface T {
   actions: Record<'done', string>;
@@ -20,6 +21,8 @@ interface TodoListProps {
 
 export const TodoList = ({ messages: t }: TodoListProps) => {
   const { ref, inView } = useInView();
+  const { isPending, isSuccess, mutate } = useBookMutation();
+  console.log({ isPending, isSuccess });
 
   const { data, isError, isLoading, fetchNextPage, hasNextPage, isFetching } =
     useTodoBooksInfiniteQuery();
@@ -47,7 +50,20 @@ export const TodoList = ({ messages: t }: TodoListProps) => {
                   title={title}
                   isPurchased={isPurchased}
                 />
-                <Button color="purple">{t.actions.done}</Button>
+                <Button
+                  color="purple"
+                  onClick={() =>
+                    mutate({
+                      id: id.toString(),
+                      body: {
+                        isPurchased: true,
+                        purchasedDate: new Date().toISOString(),
+                      },
+                    })
+                  }
+                >
+                  {t.actions.done}
+                </Button>
               </Flex>
             </BookCard>
           ))
