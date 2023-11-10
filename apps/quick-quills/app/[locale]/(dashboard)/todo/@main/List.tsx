@@ -3,12 +3,12 @@
 import { Button } from '@/ui/components/Button';
 import { Stack } from '@/ui/components/Stack';
 import { Flex } from '@radix-ui/themes';
-import { BookCard } from 'app/_shared/BookCard';
+import { BookCard } from 'app/_components/BookCard';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 import { Loading } from '@/ui/components/Loading';
 import { useTodoBooksInfiniteQuery } from '@/data-layer/useTodoBooks';
-import { DeleteBookDialog } from 'app/_shared/DeleteBook';
+import { DeleteBookDialog } from 'app/_components/DeleteBook';
 import { useBookMutation } from '@/data-layer/useUpdateBook';
 import { EmptyState } from '@/ui/components/EmptyState';
 

@@ -7,8 +7,8 @@ import { EmptyState } from '@/ui/components/EmptyState';
 import { Loading } from '@/ui/components/Loading';
 import { Stack } from '@/ui/components/Stack';
 import { Flex } from '@radix-ui/themes';
-import { BookCard } from 'app/_shared/BookCard';
-import { DeleteBookDialog } from 'app/_shared/DeleteBook';
+import { BookCard } from 'app/_components/BookCard';
+import { DeleteBookDialog } from 'app/_components/DeleteBook';
 import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 

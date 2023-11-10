@@ -3,22 +3,20 @@
 import { useQuickAccessPurchasedQuery } from '@/data-layer/useQuickAccess';
 import { Button } from '@/ui/components/Button';
 import { Flex } from '@radix-ui/themes';
-import { BookCard } from 'app/_shared/BookCard';
+import { BookCard } from 'app/_components/BookCard';
 
 interface T {
-  actions: Record<'return' | 'done', string>;
+  actions: Record<'return', string>;
 }
 
 interface QuickAccessListProps {
   messages: T;
 }
 
-export const QuickAccessInventoryList = ({
-  messages: t,
-}: QuickAccessListProps) => {
-  const { data, isLoading, isError } = useQuickAccessPurchasedQuery();
+export const QuickAccessTodoList = ({ messages: t }: QuickAccessListProps) => {
+  const { data, isLoading, isError, error } = useQuickAccessPurchasedQuery();
 
-  if (isError) return <>Error ...</>;
+  if (isError) return <>{error.message}</>;
   if (isLoading) return <>Loading ...</>;
 
   return (
