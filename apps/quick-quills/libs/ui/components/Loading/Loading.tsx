@@ -12,6 +12,7 @@ const rotate = keyframes`
     transform: rotate(360deg);
   }
 `;
+
 const Rotate = styled(() => <LoaderIcon strokeWidth={2.5} />)`
   animation: ${rotate} 1s linear infinite;
   color: ${getToken('color.fg.muted')};
