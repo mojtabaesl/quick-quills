@@ -13,6 +13,9 @@ export interface UpdateBookProps {
   body: Partial<Book>;
 }
 
+export interface NewBookProps {
+  body: Omit<Book, 'id'>;
+}
 export interface BooksFetcherProps {
   params?: Pagination & Partial<Record<keyof Book, string>>;
 }
@@ -39,6 +42,21 @@ export const updateBook = async ({ id, body }: UpdateBookProps) => {
   const url = `http://localhost:3333/api/books/${id}`;
   const res = await fetch(url, {
     method: 'PATCH',
+    body: JSON.stringify(body),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  if (!res.ok) {
+    throw new Error('Network error');
+  }
+  return await res.json();
+};
+
+export const addBook = async ({ body }: NewBookProps) => {
+  const url = 'http://localhost:3333/api/books';
+  const res = await fetch(url, {
+    method: 'POST',
     body: JSON.stringify(body),
     headers: {
       'Content-Type': 'application/json',

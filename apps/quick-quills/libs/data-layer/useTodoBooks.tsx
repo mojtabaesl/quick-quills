@@ -9,6 +9,7 @@ export const useTodoBooksInfiniteQuery = () => {
         params: {
           isPurchased: 'false',
           _sort: 'id',
+          _order: 'desc',
           _page: pageParam.toString(),
           _limit: '15',
         },
@@ -27,6 +28,8 @@ export const useTodoBooksPrefetchInfiniteQuery = async () => {
       getBooks({
         params: {
           isPurchased: 'false',
+          _sort: 'id',
+          _order: 'desc',
           _limit: '15',
         },
       }),

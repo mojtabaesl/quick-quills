@@ -13,11 +13,15 @@ const rotate = keyframes`
   }
 `;
 
-const Rotate = styled(() => <LoaderIcon strokeWidth={2.5} />)`
+const Rotate = styled.div`
   animation: ${rotate} 1s linear infinite;
   color: ${getToken('color.fg.muted')};
 `;
 
 export const Loading = () => {
-  return <Rotate />;
+  return (
+    <Rotate>
+      <LoaderIcon strokeWidth={2.5} />
+    </Rotate>
+  );
 };

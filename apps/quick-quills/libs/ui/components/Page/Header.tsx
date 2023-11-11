@@ -7,7 +7,7 @@ interface PageHeaderProps {
 
 export const PageHeader = ({ children }: PageHeaderProps) => {
   return (
-    <Flex px={'9'} py={'4'} gap={'4'} grow={'1'}>
+    <Flex px={'9'} py={'6'} gap={'4'} grow={'1'}>
       {children}
     </Flex>
   );

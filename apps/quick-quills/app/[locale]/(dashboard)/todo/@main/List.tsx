@@ -9,7 +9,7 @@ import { useEffect } from 'react';
 import { Loading } from '@/ui/components/Loading';
 import { useTodoBooksInfiniteQuery } from '@/data-layer/useTodoBooks';
 import { DeleteBookDialog } from 'app/_components/DeleteBook';
-import { useBookMutation } from '@/data-layer/useUpdateBook';
+import { useUpdateBookMutation } from '@/data-layer/useUpdateBook';
 import { EmptyState } from '@/ui/components/EmptyState';
 
 interface T {
@@ -22,8 +22,7 @@ interface TodoListProps {
 
 export const TodoList = ({ messages: t }: TodoListProps) => {
   const { ref, inView } = useInView();
-  const { isPending, isSuccess, mutate } = useBookMutation();
-  console.log({ isPending, isSuccess });
+  const { mutate } = useUpdateBookMutation();
 
   const { data, isError, isLoading, fetchNextPage, hasNextPage, isFetching } =
     useTodoBooksInfiniteQuery();
@@ -53,7 +52,8 @@ export const TodoList = ({ messages: t }: TodoListProps) => {
                   isPurchased={isPurchased}
                 />
                 <Button
-                  color="purple"
+                  color="gray"
+                  variant="soft"
                   onClick={() =>
                     mutate({
                       id: id.toString(),

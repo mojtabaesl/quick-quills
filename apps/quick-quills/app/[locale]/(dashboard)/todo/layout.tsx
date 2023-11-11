@@ -6,7 +6,7 @@ export default function TodoLayout(props: {
 }) {
   return (
     <Page>
-      <Page.Main>{props.main}</Page.Main>
+      {props.main}
       <Page.QuickAccess>{props.quickAccess}</Page.QuickAccess>
     </Page>
   );
