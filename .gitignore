@@ -48,3 +48,6 @@ error.log
 
 #Type Checking
 /apps/**/tsconfig.tsbuildinfo
+
+#env
+.env.local

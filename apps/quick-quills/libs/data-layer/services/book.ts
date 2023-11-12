@@ -1,4 +1,5 @@
 import { debug } from '@/debug';
+import { env } from '@/env';
 import type { Book } from '@/schema/book';
 import { bookSchema } from '@/schema/book';
 
@@ -24,7 +25,7 @@ export interface GetAllBooksProps {
 
 export class BookService {
   constructor(private apiUrl: string, private schema: typeof bookSchema) {
-    this.apiUrl = apiUrl;
+    this.apiUrl = apiUrl + '/books';
     this.schema = schema;
   }
 
@@ -81,9 +82,5 @@ export class BookService {
   }
 }
 
-const env = {
-  apiUrl: 'http://localhost:3333/api/books',
-};
-
-const bookService = new BookService(env.apiUrl, bookSchema);
+const bookService = new BookService(env.NEXT_PUBLIC_API_URL, bookSchema);
 export { bookService };

@@ -12,6 +12,7 @@
     "usehooks",
     "uidotdev",
     "svgr",
-    "nextjs"
+    "nextjs",
+    "env"
   ]
 }
