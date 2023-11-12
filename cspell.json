@@ -2,6 +2,7 @@
   "version": "0.2",
   "language": "en",
   "ignorePaths": ["node_modules/**", "./.gitignore", ".prettierrc.json"],
+  "dictionaries": ["german"],
   "words": [
     "estateguru",
     "typecheck",
@@ -10,6 +11,7 @@
     "hookform",
     "usehooks",
     "uidotdev",
-    "svgr"
+    "svgr",
+    "nextjs"
   ]
 }

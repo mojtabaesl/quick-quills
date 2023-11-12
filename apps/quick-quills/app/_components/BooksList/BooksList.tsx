@@ -15,6 +15,7 @@ import { forwardRef } from 'react';
 
 interface T {
   actions: Record<'done' | 'return', string>;
+  author: string;
 }
 
 export type InfiniteRef = (node?: Element | null | undefined) => void;
@@ -35,7 +36,7 @@ type ForwardedRefBooksList = ForwardRefExoticComponent<
 >;
 
 export const BooksList: ForwardedRefBooksList = forwardRef(
-  ({ data, isFetching, messages: t }, ref) => {
+  ({ data, isFetching, messages }, ref) => {
     const { mutate } = useUpdateBookMutation();
 
     const onClickHandler = ({ id, isPurchased }: OnClickHandlerProps) => {
@@ -58,7 +59,11 @@ export const BooksList: ForwardedRefBooksList = forwardRef(
                   key={id}
                   ref={page.length === i + 1 ? ref : undefined}
                 >
-                  <BookCard.Info title={title} author={author} />
+                  <BookCard.Info
+                    title={title}
+                    author={author}
+                    messages={{ author: messages.author }}
+                  />
                   <Flex gap={'6'} align={'center'}>
                     <DeleteBookDialog
                       id={id}
@@ -74,7 +79,7 @@ export const BooksList: ForwardedRefBooksList = forwardRef(
                           onClickHandler({ id: id.toString(), isPurchased })
                         }
                       >
-                        {t.actions.return}
+                        {messages.actions.return}
                       </Button>
                     ) : (
                       <Button
@@ -84,7 +89,7 @@ export const BooksList: ForwardedRefBooksList = forwardRef(
                           onClickHandler({ id: id.toString(), isPurchased })
                         }
                       >
-                        {t.actions.done}
+                        {messages.actions.done}
                       </Button>
                     )}
                   </Flex>

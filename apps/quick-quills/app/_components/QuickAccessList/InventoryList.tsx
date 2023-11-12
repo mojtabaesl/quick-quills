@@ -7,6 +7,7 @@ import { BookCard } from 'app/_components/BookCard';
 
 interface T {
   actions: Record<'return' | 'done', string>;
+  author: string;
 }
 
 interface QuickAccessListProps {
@@ -14,7 +15,7 @@ interface QuickAccessListProps {
 }
 
 export const QuickAccessInventoryList = ({
-  messages: t,
+  messages,
 }: QuickAccessListProps) => {
   const { data, isLoading, isError } = useQuickAccessPurchasedQuery();
 
@@ -25,9 +26,13 @@ export const QuickAccessInventoryList = ({
     <Flex gap={'3'}>
       {data?.map(({ title, id, author }) => (
         <BookCard key={id} style={{ maxWidth: '600px' }}>
-          <BookCard.Info title={title} author={author} />
+          <BookCard.Info
+            title={title}
+            author={author}
+            messages={{ author: messages.author }}
+          />
           <Button color="gray" variant="soft">
-            {t.actions.return}
+            {messages.actions.return}
           </Button>
         </BookCard>
       ))}

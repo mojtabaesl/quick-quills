@@ -1,4 +1,4 @@
-import { QuickAccessSection } from '@/ui/components/QuickAccessSection';
+import { QuickAccessSection } from '@/ui/components/QuickAccess/QuickAccessSection';
 import type { ReactNode } from 'react';
 
 interface PageQuickAccessProps {

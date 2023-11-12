@@ -12,6 +12,9 @@ import { useAllBooksInfiniteQuery } from '@/data-layer/hooks';
 
 interface T {
   actions: Record<'done' | 'return', string>;
+  search: string;
+  author: string;
+  noResults: string;
 }
 
 interface TodoListProps {
@@ -47,7 +50,11 @@ export const AllBooks = ({ messages }: TodoListProps) => {
   return (
     <Stack gap={'5'} grow={'1'} pb={'7'}>
       <Page.Container direction={'row'} justify={'between'} align={'start'}>
-        <SearchBox value={searchText} onChange={setSearchText} />
+        <SearchBox
+          value={searchText}
+          onChange={setSearchText}
+          placeholder={messages.search}
+        />
       </Page.Container>
       {data?.pages[0].length !== 0 ? (
         <BooksList
@@ -57,7 +64,7 @@ export const AllBooks = ({ messages }: TodoListProps) => {
           messages={messages}
         />
       ) : (
-        <NoResults message="No Results Found" />
+        <NoResults message={messages.noResults} />
       )}
     </Stack>
   );

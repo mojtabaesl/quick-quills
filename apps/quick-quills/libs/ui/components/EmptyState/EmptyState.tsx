@@ -1,4 +1,4 @@
-import { PageLink } from '@/router/PageLink';
+import { PageLink } from '@/routes/PageLink';
 import { Button } from '../Button';
 import { Stack } from '../Stack';
 import { BookIllustration } from './BookIllustration';

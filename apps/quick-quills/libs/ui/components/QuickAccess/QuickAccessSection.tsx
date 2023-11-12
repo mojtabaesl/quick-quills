@@ -3,7 +3,7 @@
 import { getToken } from '@/utils';
 import type { ReactNode } from 'react';
 import styled from 'styled-components';
-import { Page } from './Page';
+import { Page } from '../Page';
 
 interface QuickAccessSectionProps {
   children: ReactNode;

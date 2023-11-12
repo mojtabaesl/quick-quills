@@ -2,7 +2,7 @@ import { NavLink } from '../NavLink';
 import { useTranslations } from 'next-intl';
 import { StyledUl } from './StyledUl';
 import type { ReactNode } from 'react';
-import type { Routes } from '@/router/routes';
+import type { Routes } from '@/routes/routes';
 import { Stack } from '../Stack';
 
 export interface NavLink {

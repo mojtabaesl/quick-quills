@@ -1,4 +1,4 @@
-import { PageLink } from '@/router/PageLink';
+import { PageLink } from '@/routes/PageLink';
 import { getToken } from '@/utils';
 import styled from 'styled-components';
 

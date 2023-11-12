@@ -5,13 +5,18 @@ import { useAllBooksPrefetchInfiniteQuery } from '@/data-layer/hooks';
 import { AllBooks } from './AllBooks';
 
 export default function BooksPage() {
-  const t2 = useTranslations('book.card.action');
+  const t = useTranslations('book.card');
+  const t2 = useTranslations('allBooks');
   const messages = {
     actions: {
-      done: t2('done'),
-      return: t2('return'),
+      done: t('action.done'),
+      return: t('action.return'),
     },
+    search: t2('search'),
+    author: t('author'),
+    noResults: t2('noResults'),
   };
+
   return (
     <Page>
       <Page.Main>

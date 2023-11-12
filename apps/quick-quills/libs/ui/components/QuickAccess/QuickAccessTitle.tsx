@@ -1,7 +1,7 @@
 import { Button, Flex, Heading } from '@radix-ui/themes';
 import { ExternalLinkIcon } from '@/ui/icons';
-import type { Routes } from '@/router/routes';
-import { PageLink } from '@/router/PageLink';
+import type { Routes } from '@/routes/routes';
+import { PageLink } from '@/routes/PageLink';
 
 interface QuickAccessTitleProps {
   seeMoreLink?: Routes;

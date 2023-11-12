@@ -5,7 +5,19 @@
       "title": "Recently Purchased Books",
       "seeMore": "See All Purchased Books"
     },
-    "search": "Search for books..."
+    "actions": {
+      "addBook": "Add New Book",
+      "cancel": "Cancel"
+    },
+    "form": {
+      "title": "Add New Book To Todo List",
+      "fields": {
+        "title": "Title",
+        "author": "Author"
+      }
+    },
+    "search": "Search by title or author",
+    "noResults": "No Results"
   },
   "navigation": {
     "home": "Home",
@@ -19,7 +31,7 @@
         "done": "Mark As Purchased",
         "return": "Return To Todo List"
       },
-      "subtitle": "Author"
+      "author": "Author"
     }
   },
   "inventory": {
@@ -27,6 +39,11 @@
       "title": "Recently Added Books",
       "seeMore": "See Todo List"
     },
-    "search": "Search for books..."
+    "search": "Search by title or author",
+    "noResults": "No Results"
+  },
+  "allBooks": {
+    "search": "Search by title or author",
+    "noResults": "No Results"
   }
 }

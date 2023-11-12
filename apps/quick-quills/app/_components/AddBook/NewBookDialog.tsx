@@ -20,13 +20,20 @@ const newBookSchema = z.object({
   author: z.string().trim(),
 });
 
+export interface NewBookDialogMessages {
+  title: string;
+  fields: Record<'title' | 'author', string>;
+  actions: Record<'addBook' | 'cancel', string>;
+}
+
 type NewBookFormInput = z.infer<typeof newBookSchema>;
 
 interface NewBookFormProps {
   onClose: () => void;
+  messages: NewBookDialogMessages;
 }
 
-export const NewBookDialog = ({ onClose }: NewBookFormProps) => {
+export const NewBookDialog = ({ onClose, messages }: NewBookFormProps) => {
   const { isPending, isSuccess, mutate } = useAddBookMutation();
 
   const {
@@ -53,28 +60,28 @@ export const NewBookDialog = ({ onClose }: NewBookFormProps) => {
     <Dialog.Root defaultOpen={true} onOpenChange={onClose}>
       <Dialog.Content style={{ maxWidth: 450 }}>
         <Stack gap={'6'}>
-          <Dialog.Title>Add New Book To Todo List</Dialog.Title>
+          <Dialog.Title>{messages.title}</Dialog.Title>
           <Stack gap={'4'} asChild>
             <form onSubmit={handleSubmit(onSubmit)}>
               <InputField
                 label="Title"
                 id="title"
                 withAsterisk
-                placeholder="Book Author"
+                placeholder={messages.fields.title}
                 error={errors.title?.message}
                 {...register('title')}
               />
               <InputField
                 id="author"
                 label="Author"
-                placeholder="Book Author"
+                placeholder={messages.fields.author}
                 error={errors.author?.message}
                 {...register('author')}
               />
               <Flex gap="3" mt="4" justify="end">
                 <Dialog.Close>
                   <Button variant="soft" color="gray">
-                    Cancel
+                    {messages.actions.cancel}
                   </Button>
                 </Dialog.Close>
                 <Button
@@ -82,7 +89,7 @@ export const NewBookDialog = ({ onClose }: NewBookFormProps) => {
                   type="submit"
                   color="purple"
                 >
-                  {isPending ? <Loading /> : 'Add New Book'}
+                  {isPending ? <Loading /> : messages.actions.addBook}
                 </Button>
               </Flex>
             </form>

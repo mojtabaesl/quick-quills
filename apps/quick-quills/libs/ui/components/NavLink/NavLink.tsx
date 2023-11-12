@@ -5,7 +5,7 @@ import { useMemo } from 'react';
 import { comparePaths } from '../../../utils/path';
 import { Flex, Text } from '@radix-ui/themes';
 import { StyledPageLink } from './StyledPageLink';
-import type { Routes } from '@/router/routes';
+import type { Routes } from '@/routes/routes';
 
 interface Props {
   href: Routes;
