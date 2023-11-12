@@ -64,12 +64,7 @@ export const BookCard: ForwardedRefBookCard = forwardRef(
         </Flex>
         <Flex gap={'6'} align={'center'}>
           <If condition={Boolean(!minimal)}>
-            <DeleteBookDialog
-              id={id}
-              author={author}
-              title={title}
-              isPurchased={isPurchased}
-            />
+            <DeleteBookDialog id={id} author={author} title={title} />
           </If>
           {isPurchased ? (
             <Button

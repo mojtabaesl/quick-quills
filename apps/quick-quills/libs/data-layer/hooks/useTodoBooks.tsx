@@ -1,6 +1,7 @@
 import type { Book } from '@/schema/book';
 import { bookService, type Pagination } from '../services/book';
 import { QueryClient, useInfiniteQuery } from '@tanstack/react-query';
+import { keys } from '../react-query/keys';
 
 const getParams = ({
   query,
@@ -28,7 +29,7 @@ export const useTodoBooksInfiniteQuery = ({
   enabled: boolean;
 }) => {
   return useInfiniteQuery({
-    queryKey: ['books', 'todo', query],
+    queryKey: keys.filteredTodo(query),
     queryFn: ({ pageParam }) =>
       bookService.getAll({
         params: { ...getParams({ pageParam, query }) },
@@ -43,7 +44,7 @@ export const useTodoBooksInfiniteQuery = ({
 export const useTodoBooksPrefetchInfiniteQuery = async () => {
   const queryClient = new QueryClient();
   await queryClient.prefetchInfiniteQuery({
-    queryKey: ['books', 'todo'],
+    queryKey: keys.todo(),
     queryFn: ({ pageParam }) =>
       bookService.getAll({
         params: { ...getParams({ pageParam }) },

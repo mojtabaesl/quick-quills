@@ -3,6 +3,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import type { Book } from '@/schema/book';
 import { bookService } from '../services/book';
 import { debug } from '@/debug';
+import { keys } from '../react-query/keys';
 
 interface AddBookMutationProps {
   body: Pick<Book, 'title' | 'author'>;
@@ -11,7 +12,7 @@ interface AddBookMutationProps {
 export const useAddBookMutation = () => {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationKey: ['book', 'add'],
+    mutationKey: keys.addBook(),
     onError: ({ message }) => {
       debug.error('All', { message });
     },

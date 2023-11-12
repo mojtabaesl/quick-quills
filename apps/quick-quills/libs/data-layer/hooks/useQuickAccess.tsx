@@ -1,10 +1,11 @@
 import { QueryClient, useQuery } from '@tanstack/react-query';
 import { bookService } from '../services/book';
+import { keys } from '../react-query/keys';
 
 export const useQuickAccessTodoPrefetchQuery = async () => {
   const queryClient = new QueryClient();
   await queryClient.prefetchQuery({
-    queryKey: ['books', 'todo', 'quickAccess'],
+    queryKey: keys.quickAccessTodo(),
     queryFn: () =>
       bookService.getAll({
         params: {
@@ -20,7 +21,7 @@ export const useQuickAccessTodoPrefetchQuery = async () => {
 
 export const useQuickAccessTodoQuery = () => {
   return useQuery({
-    queryKey: ['books', 'todo', 'quickAccess'],
+    queryKey: keys.quickAccessTodo(),
     queryFn: () =>
       bookService.getAll({
         params: {
@@ -36,7 +37,7 @@ export const useQuickAccessTodoQuery = () => {
 export const useQuickAccessPurchasedPrefetchQuery = async () => {
   const queryClient = new QueryClient();
   await queryClient.prefetchQuery({
-    queryKey: ['books', 'purchased', 'quickAccess'],
+    queryKey: keys.quickAccessPurchased(),
     queryFn: () =>
       bookService.getAll({
         params: {
@@ -52,7 +53,7 @@ export const useQuickAccessPurchasedPrefetchQuery = async () => {
 
 export const useQuickAccessPurchasedQuery = () => {
   return useQuery({
-    queryKey: ['books', 'purchased', 'quickAccess'],
+    queryKey: keys.quickAccessPurchased(),
     queryFn: () =>
       bookService.getAll({
         params: {

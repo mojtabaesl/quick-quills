@@ -3,8 +3,8 @@ import { Stack } from '@/ui/components/Stack';
 
 export default function Loading() {
   return (
-    <Stack justify={'center'} align={'center'}>
-      <LoadingUI />;
+    <Stack justify={'center'} align={'center'} grow={'1'}>
+      <LoadingUI />
     </Stack>
   );
 }

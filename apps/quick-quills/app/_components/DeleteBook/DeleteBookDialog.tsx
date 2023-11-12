@@ -8,17 +8,11 @@ import { Stack } from '@/ui/components/Stack';
 import { TrashIcon } from '@/ui/icons';
 import { Text, Dialog, Flex } from '@radix-ui/themes';
 
-type DeleteDialogProps = Pick<Book, 'author' | 'id' | 'title' | 'isPurchased'>;
+type DeleteDialogProps = Pick<Book, 'author' | 'id' | 'title'>;
 
-export const DeleteBookDialog = ({
-  id,
-  author,
-  title,
-  isPurchased,
-}: DeleteDialogProps) => {
+export const DeleteBookDialog = ({ id, author, title }: DeleteDialogProps) => {
   const { mutate } = useDeleteBook({
     id: id.toString(),
-    invalidateQueries: isPurchased ? 'purchased' : 'todo',
   });
 
   return (
@@ -28,7 +22,6 @@ export const DeleteBookDialog = ({
           <TrashIcon />
         </IconButton>
       </Dialog.Trigger>
-
       <Dialog.Content style={{ maxWidth: 450 }}>
         <Dialog.Title>Delete Book</Dialog.Title>
         <Stack gap={'1'} my="5">
