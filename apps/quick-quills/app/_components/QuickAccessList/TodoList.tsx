@@ -1,14 +1,15 @@
 'use client';
 
 import { useQuickAccessTodoQuery } from '@/data-layer/hooks';
-import { Button } from '@/ui/components/Button';
+import { If } from '@/ui/components/If';
 import { Loading } from '@/ui/components/Loading';
-import { Flex } from '@radix-ui/themes';
+import { Flex, Text } from '@radix-ui/themes';
 import { BookCard } from 'app/_components/BookCard';
 
 interface T {
-  actions: Record<'done', string>;
+  actions: Record<'done' | 'return', string>;
   author: string;
+  emptyList: string;
 }
 
 interface QuickAccessListProps {
@@ -23,18 +24,19 @@ export const QuickAccessTodoList = ({ messages }: QuickAccessListProps) => {
 
   return (
     <Flex gap={'3'}>
-      {data?.map(({ title, id, author }) => (
-        <BookCard key={id}>
-          <BookCard.Info
-            title={title}
-            author={author}
-            messages={{ author: messages.author }}
-          />
-          <Button color="gray" variant="soft">
-            {messages.actions.done}
-          </Button>
-        </BookCard>
+      {data?.map(({ id, ...rest }) => (
+        <BookCard
+          key={id}
+          style={{ maxWidth: '600px' }}
+          data={{ id, ...rest }}
+          messages={messages}
+          minimal
+        />
       ))}
+
+      <If condition={data?.length === 0}>
+        <Text color="gray">{messages.emptyList}</Text>
+      </If>
     </Flex>
   );
 };

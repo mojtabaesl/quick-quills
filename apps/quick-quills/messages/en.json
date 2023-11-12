@@ -3,7 +3,8 @@
   "todo": {
     "quickAccess": {
       "title": "Recently Purchased Books",
-      "seeMore": "See All Purchased Books"
+      "seeMore": "See All Purchased Books",
+      "emptyList": "Your list is empty"
     },
     "actions": {
       "addBook": "Add New Book",
@@ -17,7 +18,7 @@
       }
     },
     "search": "Search by title or author",
-    "noResults": "No Results"
+    "noResults": "There is no book here :("
   },
   "navigation": {
     "home": "Home",
@@ -37,13 +38,14 @@
   "inventory": {
     "quickAccess": {
       "title": "Recently Added Books",
-      "seeMore": "See Todo List"
+      "seeMore": "See Todo List",
+      "emptyList": "Your list is empty"
     },
     "search": "Search by title or author",
-    "noResults": "No Results"
+    "noResults": "There is no book here :("
   },
   "allBooks": {
     "search": "Search by title or author",
-    "noResults": "No Results"
+    "noResults": "There is no book here :("
   }
 }

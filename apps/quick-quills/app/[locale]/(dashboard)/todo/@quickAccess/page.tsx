@@ -13,6 +13,7 @@ export default function TodoPage() {
       return: t2('action.return'),
     },
     author: t2('author'),
+    emptyList: t('quickAccess.emptyList'),
   };
   return (
     <>

@@ -10,7 +10,7 @@ export interface BookInfoProps {
   messages: T;
 }
 
-export const BookInfo = ({ title, author, messages }: BookInfoProps) => {
+export const BaseBookInfo = ({ title, author, messages }: BookInfoProps) => {
   return (
     <Stack gap={'1'} justify={'center'}>
       <Text as="p" size={'3'} weight={'bold'}>
