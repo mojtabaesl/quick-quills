@@ -13,6 +13,7 @@ import { Flex } from '@radix-ui/themes';
 import { BaseBookCard } from './BaseBookCard';
 import { DeleteBookDialog } from 'app/_components/DeleteBook';
 import { forwardRef } from 'react';
+import { Done } from '@/ui/components/Done/Done';
 
 interface T {
   actions: Record<'done' | 'return', string>;
@@ -53,11 +54,14 @@ export const BookCard: ForwardedRefBookCard = forwardRef(
 
     return (
       <BaseBookCard ref={ref} {...rest}>
-        <BaseBookCard.Info
-          title={data.title}
-          author={author}
-          messages={{ author: messages.author }}
-        />
+        <Flex align={'center'} gap={'4'}>
+          <Done done={isPurchased} />
+          <BaseBookCard.Info
+            title={data.title}
+            author={author}
+            messages={{ author: messages.author }}
+          />
+        </Flex>
         <Flex gap={'6'} align={'center'}>
           <If condition={Boolean(!minimal)}>
             <DeleteBookDialog

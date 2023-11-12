@@ -10,4 +10,5 @@ export {
   Loader2 as LoaderIcon,
   Info as InfoIcon,
   AlertTriangle as AlertTriangleIcon,
+  CheckCircle as CheckCircleIcon,
 } from 'lucide-react';

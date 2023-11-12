@@ -12,6 +12,7 @@ const colorTokens = {
       '2': 'var(--c-tint-100)',
     },
   },
+  brand: 'var(--c-brand)',
   border: {
     primary: 'var(--c-border-primary)',
   },
