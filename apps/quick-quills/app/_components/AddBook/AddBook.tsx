@@ -3,6 +3,7 @@
 import { Button } from '@/ui/components/Button';
 import { useState } from 'react';
 import { NewBookDialog } from './NewBookDialog';
+import { If } from '@/ui/components/If';
 
 export const AddBook = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -11,9 +12,9 @@ export const AddBook = () => {
       <Button size={'3'} color="purple" onClick={() => setIsDialogOpen(true)}>
         Add New Book
       </Button>
-      {isDialogOpen ? (
+      <If condition={isDialogOpen}>
         <NewBookDialog onClose={() => setIsDialogOpen(false)} />
-      ) : null}
+      </If>
     </>
   );
 };

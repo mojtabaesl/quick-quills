@@ -6,6 +6,7 @@ export type Pagination = {
   _limit?: string;
   _sort?: keyof Book;
   _page?: string;
+  q?: string;
 };
 
 export interface UpdateBookProps {

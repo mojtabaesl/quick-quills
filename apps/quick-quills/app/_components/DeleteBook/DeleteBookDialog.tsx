@@ -33,13 +33,13 @@ export const DeleteBookDialog = ({
         <Dialog.Title>Delete Book</Dialog.Title>
         <Stack gap={'1'} my="5">
           <Text size={'2'}>
-            {`Are you sure you want to delete the book "${title}" from "${author}"?`}
+            {`Are you sure you want to delete the book "${title}"`}
+            {author ? ` from "${author}"` : ''}
           </Text>
           <Text size={'2'} color="red">
             This action cannot be undone.
           </Text>
         </Stack>
-
         <Flex gap="3" mt="4" justify="end">
           <Dialog.Close>
             <Button variant="soft" color="gray">

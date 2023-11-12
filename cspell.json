@@ -2,5 +2,13 @@
   "version": "0.2",
   "language": "en",
   "ignorePaths": ["node_modules/**", "./.gitignore", ".prettierrc.json"],
-  "words": ["estateguru", "typecheck", "lucide", "tanstack", "hookform"]
+  "words": [
+    "estateguru",
+    "typecheck",
+    "lucide",
+    "tanstack",
+    "hookform",
+    "usehooks",
+    "uidotdev"
+  ]
 }

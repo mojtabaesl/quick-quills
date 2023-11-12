@@ -8,4 +8,5 @@ export const AppSurface = styled(Flex)`
   background-color: ${getToken('color.bg.surface')};
   color: ${getToken('color.fg.primary')};
   height: 100vh;
+  overflow: hidden;
 `;

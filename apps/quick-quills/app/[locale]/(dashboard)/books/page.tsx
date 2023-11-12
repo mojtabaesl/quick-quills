@@ -1,12 +1,10 @@
 import { useTranslations } from 'next-intl';
-import { SearchBox } from '@/ui/components/SearchBox';
 import { Page } from '@/ui/components/Page';
-import { BooksList } from './List';
 import { PreFetchBoundary } from '@/data-layer/PreFetchBoundary';
 import { useAllBooksPrefetchInfiniteQuery } from '@/data-layer/useAllBooks';
+import { AllBooks } from './AllBooks';
 
 export default function BooksPage() {
-  const t = useTranslations('inventory');
   const t2 = useTranslations('book.card.action');
   const messages = {
     actions: {
@@ -16,14 +14,11 @@ export default function BooksPage() {
   };
   return (
     <Page>
-      <Page.Header>
-        <SearchBox placeholder={t('search')} />
-      </Page.Header>
       <Page.Main>
         <PreFetchBoundary
           preFetchedQueryClientFN={useAllBooksPrefetchInfiniteQuery}
         >
-          <BooksList messages={messages} />
+          <AllBooks messages={messages} />
         </PreFetchBoundary>
       </Page.Main>
     </Page>

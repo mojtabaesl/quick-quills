@@ -5,7 +5,7 @@ import { useQuickAccessTodoPrefetchQuery } from '@/data-layer/useQuickAccess';
 import { QuickAccessTodoList } from 'app/_components/QuickAccessList';
 
 export default function TodoPage() {
-  const t = useTranslations('todo');
+  const t = useTranslations('inventory');
   const t2 = useTranslations('book.card.action');
   const messages = {
     actions: {

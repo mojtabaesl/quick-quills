@@ -24,7 +24,7 @@ export const QuickAccessInventoryList = ({
   return (
     <Flex gap={'3'}>
       {data?.map(({ title, id, author }) => (
-        <BookCard key={id}>
+        <BookCard key={id} style={{ maxWidth: '600px' }}>
           <BookCard.Info title={title} author={author} />
           <Button color="gray" variant="soft">
             {t.actions.return}

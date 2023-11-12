@@ -10,6 +10,7 @@ import { Flex, ScrollArea } from '@radix-ui/themes';
 import type { InfiniteData } from '@tanstack/react-query';
 import { BookCard } from 'app/_components/BookCard';
 import { DeleteBookDialog } from 'app/_components/DeleteBook';
+import type { ForwardRefExoticComponent, RefAttributes } from 'react';
 import { forwardRef } from 'react';
 
 interface T {
@@ -24,18 +25,20 @@ interface BooksListProps {
   isFetching: boolean;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const BooksList = forwardRef<any, BooksListProps>(
+interface OnClickHandlerProps {
+  id: string;
+  isPurchased: boolean;
+}
+
+type ForwardedRefBooksList = ForwardRefExoticComponent<
+  BooksListProps & RefAttributes<HTMLDivElement>
+>;
+
+export const BooksList: ForwardedRefBooksList = forwardRef(
   ({ data, isFetching, messages: t }, ref) => {
     const { mutate } = useUpdateBookMutation();
 
-    const onClickHandler = ({
-      id,
-      isPurchased,
-    }: {
-      id: string;
-      isPurchased: boolean;
-    }) => {
+    const onClickHandler = ({ id, isPurchased }: OnClickHandlerProps) => {
       mutate({
         id,
         body: {
@@ -66,6 +69,7 @@ export const BooksList = forwardRef<any, BooksListProps>(
                     {isPurchased ? (
                       <Button
                         color="gray"
+                        variant="soft"
                         onClick={() =>
                           onClickHandler({ id: id.toString(), isPurchased })
                         }
@@ -75,6 +79,7 @@ export const BooksList = forwardRef<any, BooksListProps>(
                     ) : (
                       <Button
                         color="gray"
+                        variant="soft"
                         onClick={() =>
                           onClickHandler({ id: id.toString(), isPurchased })
                         }

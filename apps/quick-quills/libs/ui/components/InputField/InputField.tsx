@@ -2,6 +2,7 @@ import { Text, TextField } from '@radix-ui/themes';
 import type { TextFieldInputProps } from '@radix-ui/themes/dist/cjs/components/text-field';
 import { forwardRef } from 'react';
 import { Stack } from '../Stack';
+import { If } from '../If';
 
 interface InputFieldProps extends TextFieldInputProps {
   label?: string;
@@ -19,11 +20,11 @@ function FormFieldLabel({ children, withAsterisk, htmlFor }: InputLabelProps) {
   return (
     <Text as="label" htmlFor={htmlFor}>
       {children}
-      {withAsterisk ? (
+      <If condition={Boolean(withAsterisk)}>
         <Text ml={'1'} color="red">
           *
         </Text>
-      ) : null}
+      </If>
     </Text>
   );
 }
@@ -32,11 +33,11 @@ export const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
   ({ id, label, error, withAsterisk, ...rest }, ref) => {
     return (
       <Stack gap={'2'}>
-        {label ? (
+        <If condition={Boolean(label)}>
           <FormFieldLabel htmlFor={id} withAsterisk={withAsterisk}>
             {label}
           </FormFieldLabel>
-        ) : null}
+        </If>
         <Stack gap={'2'}>
           <TextField.Input
             id={id}
@@ -45,11 +46,11 @@ export const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
             variant="soft"
             {...rest}
           />
-          {error ? (
+          <If condition={Boolean(error)}>
             <Text size={'1'} color="red">
               {error}
             </Text>
-          ) : null}
+          </If>
         </Stack>
       </Stack>
     );

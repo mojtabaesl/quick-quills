@@ -1,13 +1,13 @@
 'use client';
 
-import { useQuickAccessPurchasedQuery } from '@/data-layer/useQuickAccess';
+import { useQuickAccessTodoQuery } from '@/data-layer/useQuickAccess';
 import { Button } from '@/ui/components/Button';
 import { Loading } from '@/ui/components/Loading';
 import { Flex } from '@radix-ui/themes';
 import { BookCard } from 'app/_components/BookCard';
 
 interface T {
-  actions: Record<'return', string>;
+  actions: Record<'done', string>;
 }
 
 interface QuickAccessListProps {
@@ -15,7 +15,7 @@ interface QuickAccessListProps {
 }
 
 export const QuickAccessTodoList = ({ messages: t }: QuickAccessListProps) => {
-  const { data, isLoading, isError, error } = useQuickAccessPurchasedQuery();
+  const { data, isLoading, isError, error } = useQuickAccessTodoQuery();
 
   if (isError) return <>{error.message}</>;
   if (isLoading) return <Loading />;
@@ -26,7 +26,7 @@ export const QuickAccessTodoList = ({ messages: t }: QuickAccessListProps) => {
         <BookCard key={id}>
           <BookCard.Info title={title} author={author} />
           <Button color="gray" variant="soft">
-            {t.actions.return}
+            {t.actions.done}
           </Button>
         </BookCard>
       ))}

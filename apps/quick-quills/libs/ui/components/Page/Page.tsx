@@ -3,19 +3,21 @@ import type { ReactNode } from 'react';
 import { PageHeader } from './Header';
 import { PageMain } from './Main';
 import { PageQuickAccess } from './QuickAccess';
+import { Container } from './Container';
 
 interface PageProps {
   children: ReactNode;
 }
 
 export const Page = ({ children }: PageProps) => {
-  return <Stack grow={'1'}>{children}</Stack>;
+  return (
+    <Stack grow={'1'} justify={'between'}>
+      {children}
+    </Stack>
+  );
 };
 
 Page.Header = PageHeader;
 Page.Main = PageMain;
 Page.QuickAccess = PageQuickAccess;
-
-// <ScrollArea type="always" scrollbars="vertical">
-//   <TodoList />
-// </ScrollArea>
+Page.Container = Container;

@@ -1,5 +1,5 @@
-import { ScrollArea } from '@radix-ui/themes';
 import type { ReactNode } from 'react';
+import { Stack } from '../Stack';
 
 interface PageMainProps {
   children: ReactNode;
@@ -7,8 +7,8 @@ interface PageMainProps {
 
 export const PageMain = ({ children }: PageMainProps) => {
   return (
-    <ScrollArea type="always" scrollbars="vertical">
+    <Stack grow={'1'} pt={'7'} pb={'2'}>
       {children}
-    </ScrollArea>
+    </Stack>
   );
 };
