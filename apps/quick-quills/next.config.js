@@ -19,7 +19,7 @@ const nextConfig = {
     return [
       {
         source: '/',
-        destination: '/home',
+        destination: '/en/home',
       },
     ];
   },
