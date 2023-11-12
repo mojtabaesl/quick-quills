@@ -8,7 +8,7 @@ import { useDebounce } from '@uidotdev/usehooks';
 import { NoResults } from '@/ui/components/NoResults';
 import { Page } from '@/ui/components/Page';
 import { Stack } from '@/ui/components/Stack';
-import { useAllBooksInfiniteQuery } from '@/data-layer/useAllBooks';
+import { useAllBooksInfiniteQuery } from '@/data-layer/hooks';
 
 interface T {
   actions: Record<'done' | 'return', string>;

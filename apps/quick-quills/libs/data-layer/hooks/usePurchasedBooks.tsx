@@ -1,11 +1,6 @@
-import { QueryClient, useInfiniteQuery } from '@tanstack/react-query';
-import type { Pagination } from './BooksFetcher';
-import { getBooks } from './BooksFetcher';
 import type { Book } from '@/schema/book';
-
-export interface HookParams {
-  params?: Pagination;
-}
+import { bookService, type Pagination } from '../services/book';
+import { QueryClient, useInfiniteQuery } from '@tanstack/react-query';
 
 const getParams = ({
   query,
@@ -15,6 +10,9 @@ const getParams = ({
   query?: string;
 }) => {
   const baseParams: Pagination & Partial<Record<keyof Book, string>> = {
+    isPurchased: 'true',
+    _sort: 'purchasedDate',
+    _order: 'desc',
     _page: pageParam.toString(),
     _limit: '15',
     q: query,
@@ -22,7 +20,7 @@ const getParams = ({
   return baseParams;
 };
 
-export const useAllBooksInfiniteQuery = ({
+export const usePurchasedBooksInfiniteQuery = ({
   query,
   enabled,
 }: {
@@ -30,9 +28,9 @@ export const useAllBooksInfiniteQuery = ({
   enabled: boolean;
 }) => {
   return useInfiniteQuery({
-    queryKey: ['books', query],
+    queryKey: ['books', 'purchased', query],
     queryFn: ({ pageParam }) =>
-      getBooks({
+      bookService.getAll({
         params: { ...getParams({ pageParam, query }) },
       }),
     getNextPageParam: (lastPage, allPages) =>
@@ -42,12 +40,12 @@ export const useAllBooksInfiniteQuery = ({
   });
 };
 
-export const useAllBooksPrefetchInfiniteQuery = async () => {
+export const usePurchasedBooksPrefetchInfiniteQuery = async () => {
   const queryClient = new QueryClient();
   await queryClient.prefetchInfiniteQuery({
-    queryKey: ['books'],
+    queryKey: ['books', 'purchased'],
     queryFn: ({ pageParam }) =>
-      getBooks({
+      bookService.getAll({
         params: { ...getParams({ pageParam }) },
       }),
     initialPageParam: 1,

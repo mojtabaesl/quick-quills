@@ -9,6 +9,7 @@
     "tanstack",
     "hookform",
     "usehooks",
-    "uidotdev"
+    "uidotdev",
+    "svgr"
   ]
 }

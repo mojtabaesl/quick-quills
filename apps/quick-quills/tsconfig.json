@@ -30,7 +30,8 @@
     "../../apps/quick-quills/.next/types/**/*.ts",
     "../../dist/apps/quick-quills/.next/types/**/*.ts",
     "next-env.d.ts",
-    "@types/styled.d.ts"
+    "@types/styled.d.ts",
+    "libs/env/env.js"
   ],
   "exclude": [
     "node_modules",

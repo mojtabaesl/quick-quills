@@ -1,12 +1,12 @@
 import { QueryClient, useQuery } from '@tanstack/react-query';
-import { getBooks } from './BooksFetcher';
+import { bookService } from '../services/book';
 
 export const useQuickAccessTodoPrefetchQuery = async () => {
   const queryClient = new QueryClient();
   await queryClient.prefetchQuery({
     queryKey: ['books', 'todo', 'quickAccess'],
     queryFn: () =>
-      getBooks({
+      bookService.getAll({
         params: {
           isPurchased: 'false',
           _sort: 'id',
@@ -22,7 +22,7 @@ export const useQuickAccessTodoQuery = () => {
   return useQuery({
     queryKey: ['books', 'todo', 'quickAccess'],
     queryFn: () =>
-      getBooks({
+      bookService.getAll({
         params: {
           isPurchased: 'false',
           _sort: 'id',
@@ -38,7 +38,7 @@ export const useQuickAccessPurchasedPrefetchQuery = async () => {
   await queryClient.prefetchQuery({
     queryKey: ['books', 'purchased', 'quickAccess'],
     queryFn: () =>
-      getBooks({
+      bookService.getAll({
         params: {
           isPurchased: 'true',
           _sort: 'purchasedDate',
@@ -54,7 +54,7 @@ export const useQuickAccessPurchasedQuery = () => {
   return useQuery({
     queryKey: ['books', 'purchased', 'quickAccess'],
     queryFn: () =>
-      getBooks({
+      bookService.getAll({
         params: {
           isPurchased: 'true',
           _sort: 'purchasedDate',

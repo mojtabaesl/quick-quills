@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
-import { PreFetchBoundary } from '@/data-layer/PreFetchBoundary';
-import { usePurchasedBooksPrefetchInfiniteQuery } from '@/data-layer/usePurchasedBooks';
+import { PreFetchBoundary } from '@/data-layer/hooks/PreFetchBoundary';
+import { usePurchasedBooksPrefetchInfiniteQuery } from '@/data-layer/hooks';
 import { InventoryBooks } from './InventoryBooks';
 
 export default function TodoPage() {

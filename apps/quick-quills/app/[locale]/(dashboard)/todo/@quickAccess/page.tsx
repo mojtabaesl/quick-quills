@@ -1,8 +1,8 @@
 import { QuickAccessTitle } from '@/ui/components/QuickAccessTitle';
 import { useTranslations } from 'next-intl';
 import { QuickAccessInventoryList } from 'app/_components/QuickAccessList';
-import { PreFetchBoundary } from '@/data-layer/PreFetchBoundary';
-import { useQuickAccessPurchasedPrefetchQuery } from '@/data-layer/useQuickAccess';
+import { PreFetchBoundary } from '@/data-layer/hooks/PreFetchBoundary';
+import { useQuickAccessPurchasedPrefetchQuery } from '@/data-layer/hooks';
 
 export default function TodoPage() {
   const t = useTranslations('todo');

@@ -1,6 +1,6 @@
 'use client';
 
-import { useQuickAccessTodoQuery } from '@/data-layer/useQuickAccess';
+import { useQuickAccessTodoQuery } from '@/data-layer/hooks';
 import { Button } from '@/ui/components/Button';
 import { Loading } from '@/ui/components/Loading';
 import { Flex } from '@radix-ui/themes';
@@ -15,9 +15,9 @@ interface QuickAccessListProps {
 }
 
 export const QuickAccessTodoList = ({ messages: t }: QuickAccessListProps) => {
-  const { data, isLoading, isError, error } = useQuickAccessTodoQuery();
+  const { data, isLoading, isError } = useQuickAccessTodoQuery();
 
-  if (isError) return <>{error.message}</>;
+  if (isError) return <>Error ...</>;
   if (isLoading) return <Loading />;
 
   return (

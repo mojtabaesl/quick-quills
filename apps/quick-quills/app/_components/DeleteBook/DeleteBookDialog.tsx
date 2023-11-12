@@ -1,6 +1,6 @@
 'use client';
 
-import { useDeleteBook } from '@/data-layer/useDeleteBook';
+import { useDeleteBook } from '@/data-layer/hooks';
 import type { Book } from '@/schema/book';
 import { Button } from '@/ui/components/Button';
 import { IconButton } from '@/ui/components/IconButton';

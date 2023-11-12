@@ -1,12 +1,16 @@
-import type { UpdateBookProps } from './BooksFetcher';
+import type { UpdateBookProps } from '../services/book';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { updateBook } from './BooksFetcher';
+import { bookService } from '../services/book';
+import { debug } from '@/debug';
 
 export const useUpdateBookMutation = () => {
   const queryClient = useQueryClient();
   return useMutation({
     mutationKey: ['book'],
-    mutationFn: (props: UpdateBookProps) => updateBook(props),
+    onError: ({ message }) => {
+      debug.error('All', { message });
+    },
+    mutationFn: (props: UpdateBookProps) => bookService.update(props),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['books'] });
     },

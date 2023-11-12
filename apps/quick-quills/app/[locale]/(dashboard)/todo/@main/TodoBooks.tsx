@@ -2,7 +2,7 @@
 
 import { useInView } from 'react-intersection-observer';
 import { useEffect, useState } from 'react';
-import { useTodoBooksInfiniteQuery } from '@/data-layer/useTodoBooks';
+import { useTodoBooksInfiniteQuery } from '@/data-layer/hooks';
 import { SearchBox } from '@/ui/components/SearchBox';
 import { useDebounce } from '@uidotdev/usehooks';
 import { NoResults } from '@/ui/components/NoResults';

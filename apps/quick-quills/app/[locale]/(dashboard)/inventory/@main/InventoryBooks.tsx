@@ -6,7 +6,7 @@ import { SearchBox } from '@/ui/components/SearchBox';
 import { useDebounce } from '@uidotdev/usehooks';
 import { NoResults } from '@/ui/components/NoResults';
 import { Stack } from '@/ui/components/Stack';
-import { usePurchasedBooksInfiniteQuery } from '@/data-layer/usePurchasedBooks';
+import { usePurchasedBooksInfiniteQuery } from '@/data-layer/hooks';
 import { Page } from '@/ui/components/Page';
 import { BooksList } from 'app/_components/BooksList';
 

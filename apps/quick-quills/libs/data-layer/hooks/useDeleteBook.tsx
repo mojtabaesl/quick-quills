@@ -1,5 +1,6 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { deleteBook } from './BooksFetcher';
+import { bookService } from '../services/book';
+import { debug } from '@/debug';
 
 export interface UseDeleteBookProps {
   id: string;
@@ -13,7 +14,10 @@ export const useDeleteBook = ({
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: () => deleteBook({ id }),
+    mutationFn: () => bookService.delete({ id }),
+    onError: ({ message }) => {
+      debug.error('All', { message });
+    },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['books', invalidateQueries] });
     },

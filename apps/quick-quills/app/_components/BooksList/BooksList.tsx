@@ -1,6 +1,6 @@
 'use client';
 
-import { useUpdateBookMutation } from '@/data-layer/useUpdateBook';
+import { useUpdateBookMutation } from '@/data-layer/hooks';
 import type { Book } from '@/schema/book';
 import { Button } from '@/ui/components/Button';
 import { If } from '@/ui/components/If';

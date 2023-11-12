@@ -1,5 +1,5 @@
-import { PreFetchBoundary } from '@/data-layer/PreFetchBoundary';
-import { useTodoBooksPrefetchInfiniteQuery } from '@/data-layer/useTodoBooks';
+import { PreFetchBoundary } from '@/data-layer/hooks/PreFetchBoundary';
+import { useTodoBooksPrefetchInfiniteQuery } from '@/data-layer/hooks';
 import { TodoBooks } from './TodoBooks';
 import { useTranslations } from 'next-intl';
 

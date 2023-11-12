@@ -9,13 +9,10 @@ const withNextIntl = require('next-intl/plugin')('./i18n.ts');
  **/
 const nextConfig = {
   nx: {
-    // Set this to true if you would like to to use SVGR
-    // See: https://github.com/gregberge/svgr
     svgr: false,
   },
 
   compiler: {
-    // For other options, see https://styled-components.com/docs/tooling#babel-plugin
     styledComponents: true,
   },
   async rewrites() {

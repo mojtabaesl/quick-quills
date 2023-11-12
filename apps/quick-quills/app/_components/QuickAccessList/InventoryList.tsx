@@ -1,6 +1,6 @@
 'use client';
 
-import { useQuickAccessPurchasedQuery } from '@/data-layer/useQuickAccess';
+import { useQuickAccessPurchasedQuery } from '@/data-layer/hooks';
 import { Button } from '@/ui/components/Button';
 import { Flex } from '@radix-ui/themes';
 import { BookCard } from 'app/_components/BookCard';

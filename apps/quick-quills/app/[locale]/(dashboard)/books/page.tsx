@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl';
 import { Page } from '@/ui/components/Page';
-import { PreFetchBoundary } from '@/data-layer/PreFetchBoundary';
-import { useAllBooksPrefetchInfiniteQuery } from '@/data-layer/useAllBooks';
+import { PreFetchBoundary } from '@/data-layer/hooks/PreFetchBoundary';
+import { useAllBooksPrefetchInfiniteQuery } from '@/data-layer/hooks';
 import { AllBooks } from './AllBooks';
 
 export default function BooksPage() {
