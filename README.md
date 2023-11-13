@@ -46,11 +46,28 @@ Just run `npx nx run-many -t build` to build the application. The build artifact
 
 ## UI/UX
 
-- **Design Choices** :
-  - **Colors**:
-    - **Dark Theme**: Dark themes are often associated with a modern and sleek aesthetic. They provide a sophisticated and visually pleasing look.
-    - **Purple Brand Color**: Purple is often associated with magic, mystery, and creativity. It's a color that carries a sense of enchantment and aligns well with the theme of wizardry.
-  - **Quick Access Section**: I had two choices, display purchased books on the same page as the Todo list or move them to another page. Showing purchased books on the Todo list page provides quick confirmation and easy access to completed tasks but may lead to visual clutter. On the other hand, moving purchased books to a separate "My Inventory" page keeps the Todo list clean but may require additional navigation steps. So I implemented a hybrid approach.
+**Design Choices** :
+
+- **Colors**:
+  - **Dark Theme**: Dark themes are often associated with a modern and sleek aesthetic. They provide a sophisticated and visually pleasing look.
+  - **Purple Brand Color**: Purple is often associated with magic, mystery, and creativity. It's a color that carries a sense of enchantment and aligns well with the theme of wizardry.
+- **Quick Access Section**: I had two choices, display purchased books on the same page as the Todo list or move them to another page. Showing purchased books on the Todo list page provides quick confirmation and easy access to completed tasks but may lead to visual clutter. On the other hand, moving purchased books to a separate "My Inventory" page keeps the Todo list clean but may require additional navigation steps. So I implemented a hybrid approach.
 
 <img src="./images/Dashboard.png"/>
 <img src="./images/Assets.png"/>
+
+## Tech Stack
+
+`nx`, `react-query`, `nextjs`, `express`, `json-server`, `cypress`
+
+## Bad Practices
+
+Some of bad practices that I followed intentionally:
+
+- Large and not feature-specific git commits
+- Not writing tests (because of time pressure)
+- Some DRY violations
+- Not having CI (because of time pressure)
+- Naming inconsistency (because I didn't write the Glossary at first)
+- UX violations (after book deletion user should see a message that book has been deleted, ...)
+- Not being responsive. I recommend to use this dashboard in a Full HD displays.
