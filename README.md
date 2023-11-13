@@ -44,6 +44,11 @@ Have a look at the [Nx Console extensions](https://nx.dev/nx-console). It provid
 
 Just run `npx nx run-many -t build` to build the application. The build artifacts will be stored in the `dist/` directory, ready to be deployed.
 
+## Good to mention
+
+- Type checking before each commit with `nx affected` command;
+- internationalization with `nextjs-intl`
+
 ## UI/UX
 
 **Design Choices** :
