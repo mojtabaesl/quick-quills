@@ -21,5 +21,7 @@ export const PurchasedBooksStats = () => {
       </Stack>
     );
 
-  return <ValueDisplay title="All Books" value={count?.toString()} />;
+  return (
+    <ValueDisplay title="Books In My Inventory" value={count?.toString()} />
+  );
 };

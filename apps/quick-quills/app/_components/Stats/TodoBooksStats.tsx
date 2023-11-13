@@ -21,5 +21,5 @@ export const TodoBooksStats = () => {
       </Stack>
     );
 
-  return <ValueDisplay title="All Books" value={count?.toString()} />;
+  return <ValueDisplay title="Books In Todo List" value={count?.toString()} />;
 };
