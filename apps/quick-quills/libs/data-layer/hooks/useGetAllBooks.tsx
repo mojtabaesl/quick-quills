@@ -1,6 +1,6 @@
 import type { Book } from '@/schema/book';
 import { bookService, type Pagination } from '../services/book';
-import { QueryClient, useInfiniteQuery } from '@tanstack/react-query';
+import { QueryClient, useInfiniteQuery, useQuery } from '@tanstack/react-query';
 import { keys } from '../react-query/keys';
 
 export interface HookParams {
@@ -53,4 +53,11 @@ export const useAllBooksPrefetchInfiniteQuery = async () => {
     initialPageParam: 1,
   });
   return queryClient;
+};
+
+export const useAllBooksQuery = () => {
+  return useQuery({
+    queryKey: ['books', 'all'],
+    queryFn: () => bookService.getAll(),
+  });
 };

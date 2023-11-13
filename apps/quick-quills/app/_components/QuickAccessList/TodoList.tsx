@@ -2,7 +2,6 @@
 
 import { useQuickAccessTodoQuery } from '@/data-layer/hooks';
 import { If } from '@/ui/components/If';
-import { Loading } from '@/ui/components/Loading';
 import { Flex, Text } from '@radix-ui/themes';
 import { BookCard } from 'app/_components/BookCard';
 
@@ -20,10 +19,10 @@ export const QuickAccessTodoList = ({ messages }: QuickAccessListProps) => {
   const { data, isLoading, isError } = useQuickAccessTodoQuery();
 
   if (isError) return <>Error ...</>;
-  if (isLoading) return <Loading />;
+  if (isLoading) return <>Loading ...</>;
 
   return (
-    <Flex gap={'3'}>
+    <Flex gap={'3'} grow={'1'}>
       {data?.map(({ id, ...rest }) => (
         <BookCard
           key={id}

@@ -72,78 +72,141 @@
     },
     {
       "id": 11,
-      "title": "Enchanted Wizardry 1",
-      "author": "Gellert",
-      "isPurchased": true,
-      "purchasedDate": "2023-11-05T10:30:00Z"
+      "title": "Mystical Incantations",
+      "author": "Slytherin",
+      "isPurchased": false,
+      "purchasedDate": null
     },
     {
       "id": 12,
-      "title": "Wizard's Wandlore 2",
-      "author": "McGonagall",
-      "isPurchased": true,
-      "purchasedDate": "2023-11-04T10:30:00Z"
+      "title": "The Enigma of Wizards",
+      "author": "Voldemort",
+      "isPurchased": false,
+      "purchasedDate": null
     },
     {
       "id": 13,
-      "title": "Secrets of the Mage 3",
-      "author": "Ravenclaw",
-      "isPurchased": true,
-      "purchasedDate": "2023-11-06T10:30:00Z"
+      "title": "Alchemy and Sorcery",
+      "author": "Snape",
+      "isPurchased": false,
+      "purchasedDate": null
     },
     {
       "id": 14,
-      "title": "Chronicles of Mystical Spells",
-      "author": "Saruman",
+      "title": "Spellbinding Adventures",
+      "author": "Lockhart",
       "isPurchased": false,
       "purchasedDate": null
     },
     {
       "id": 15,
-      "title": "Enchanted Wizardry",
-      "author": "Gellert",
+      "title": "The Art of Spellcasting",
+      "author": "Luna Lovegood",
       "isPurchased": false,
       "purchasedDate": null
     },
     {
       "id": 16,
-      "title": "Wizard's Wandlore",
-      "author": "McGonagall",
+      "title": "Whimsical Wizardry",
+      "author": "Dobby",
       "isPurchased": false,
       "purchasedDate": null
     },
     {
       "id": 17,
-      "title": "Secrets of the Mage",
-      "author": "Ravenclaw",
+      "title": "Wizards Unveiled",
+      "author": "Newt Scamander",
       "isPurchased": false,
       "purchasedDate": null
     },
     {
       "id": 18,
-      "title": "Chronicles of Mystical Spells",
-      "author": "Saruman",
+      "title": "Magical Creatures and Beasts",
+      "author": "Hagrid",
       "isPurchased": false,
       "purchasedDate": null
     },
     {
       "id": 19,
-      "title": "Enchanted Wizardry",
-      "author": "Gellert",
+      "title": "The Mystic's Grimoire",
+      "author": "Fawkes",
       "isPurchased": false,
       "purchasedDate": null
     },
     {
       "id": 20,
-      "title": "Wizard's Wandlore",
-      "author": "McGonagall",
+      "title": "Enigmatic Enchantments",
+      "author": "Flitwick",
       "isPurchased": false,
       "purchasedDate": null
     },
     {
       "id": 21,
-      "title": "Secrets of the Mage",
-      "author": "Ravenclaw",
+      "title": "Epic Wizardry Quests",
+      "author": "Gandalf Jr.",
+      "isPurchased": false,
+      "purchasedDate": null
+    },
+    {
+      "id": 22,
+      "title": "Mythical Wizard Spells",
+      "author": "Merlin Jr.",
+      "isPurchased": false,
+      "purchasedDate": null
+    },
+    {
+      "id": 23,
+      "title": "Legendary Wizard Chronicles",
+      "author": "Dumbledore Jr.",
+      "isPurchased": false,
+      "purchasedDate": null
+    },
+    {
+      "id": 24,
+      "title": "Enchanting Potions Handbook",
+      "author": "Morgana Jr.",
+      "isPurchased": false,
+      "purchasedDate": null
+    },
+    {
+      "id": 25,
+      "title": "Wonders of Wizardry",
+      "author": "Hermione Jr.",
+      "isPurchased": false,
+      "purchasedDate": null
+    },
+    {
+      "id": 26,
+      "title": "Sorcerer's Apprentice Guide",
+      "author": "Gryffindor Jr.",
+      "isPurchased": false,
+      "purchasedDate": null
+    },
+    {
+      "id": 27,
+      "title": "Mystic Spell Chronicles",
+      "author": "Saruman Jr.",
+      "isPurchased": false,
+      "purchasedDate": null
+    },
+    {
+      "id": 28,
+      "title": "Enchanted Tales of Wizardry",
+      "author": "Gellert Jr.",
+      "isPurchased": false,
+      "purchasedDate": null
+    },
+    {
+      "id": 29,
+      "title": "Wandlore Apprentice Handbook",
+      "author": "McGonagall Jr.",
+      "isPurchased": false,
+      "purchasedDate": null
+    },
+    {
+      "id": 30,
+      "title": "Mage's Secret Codex",
+      "author": "Ravenclaw Jr.",
       "isPurchased": false,
       "purchasedDate": null
     }

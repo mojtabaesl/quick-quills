@@ -24,7 +24,7 @@ export const QuickAccessInventoryList = ({
   if (isLoading) return <>Loading ...</>;
 
   return (
-    <Flex gap={'3'}>
+    <Flex gap={'3'} grow={'1'}>
       {data?.map(({ id, ...rest }) => (
         <BookCard
           key={id}

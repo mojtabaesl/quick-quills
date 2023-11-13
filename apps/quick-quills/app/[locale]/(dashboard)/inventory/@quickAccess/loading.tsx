@@ -4,7 +4,7 @@ import { Stack } from '@/ui/components/Stack';
 export default function Loading() {
   return (
     <Stack justify={'center'} align={'center'}>
-      <LoadingUI />;
+      <LoadingUI />
     </Stack>
   );
 }
