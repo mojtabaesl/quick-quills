@@ -49,6 +49,10 @@ Just run `npx nx run-many -t build` to build the application. The build artifact
 - Type checking before each commit with `nx affected` command;
 - internationalization with `nextjs-intl`
 
+## Tech Stack
+
+`nx`, `react-query`, `nextjs`, `express`, `json-server`, `cypress`
+
 ## UI/UX
 
 **Design Choices** :
@@ -61,18 +65,15 @@ Just run `npx nx run-many -t build` to build the application. The build artifact
 <img src="./images/Dashboard.png"/>
 <img src="./images/Assets.png"/>
 
-## Tech Stack
-
-`nx`, `react-query`, `nextjs`, `express`, `json-server`, `cypress`
-
 ## Bad Practices
 
 Some of bad practices that I followed intentionally:
 
-- Large and not feature-specific git commits
-- Not writing tests (because of time pressure)
-- Some DRY violations
-- Not having CI (because of time pressure)
-- Naming inconsistency (because I didn't write the Glossary at first)
-- UX violations (after book deletion user should see a message that book has been deleted, ...)
+- Large and not feature-specific git commits.
+- Not writing tests (because of time pressure).
+- Some DRY violations.
+- Not having CI (because of time pressure).
+- Naming inconsistency (because I didn't write the Glossary at first).
+- UX violations (after book deletion user should see a message that book has been deleted, ...).
 - Not being responsive. I recommend to use this dashboard in a Full HD displays.
+- Not completely internationalized.
