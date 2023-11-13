@@ -10,7 +10,7 @@ his very good friend, the Head of the Department of Frontend Sorcery, to build h
 magical application which helps him make a Todo list of the books that he needs to buy, and
 show the ones he has already bought from the Magical inventory of available books.
 
-[Click to see demo](https://nx.dev/core-features/share-your-cache)
+[Click to see demo](https://quick-quills.vercel.app/home)
 
 ## Start the app
 
