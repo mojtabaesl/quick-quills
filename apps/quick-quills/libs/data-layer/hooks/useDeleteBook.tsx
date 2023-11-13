@@ -17,6 +17,7 @@ export const useDeleteBook = ({ id }: UseDeleteBookProps) => {
       debug.error('All', { message });
     },
     onSuccess: () => {
+      debug.log('All', `Book has been deleted`);
       queryClient.invalidateQueries({
         queryKey: [...keys.all()],
       });

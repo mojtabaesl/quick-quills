@@ -12,7 +12,8 @@ export const useUpdateBookMutation = () => {
       debug.error('All', { message });
     },
     mutationFn: (props: UpdateBookProps) => bookService.update(props),
-    onSuccess: () => {
+    onSuccess: ({ title }) => {
+      debug.log('All', `Book ${title} has been updated`);
       queryClient.invalidateQueries({ queryKey: keys.all() });
     },
   });

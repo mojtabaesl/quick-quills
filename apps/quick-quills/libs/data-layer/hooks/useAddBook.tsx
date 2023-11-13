@@ -20,7 +20,8 @@ export const useAddBookMutation = () => {
       bookService.add({
         body: { ...body, isPurchased: false, purchasedDate: null },
       }),
-    onSuccess: () => {
+    onSuccess: ({ title }) => {
+      debug.log('All', `Book ${title} has been added`);
       queryClient.invalidateQueries({ queryKey: ['books', 'todo'] });
     },
   });
